@@ -1,6 +1,7 @@
 import React from "react";
 import { ArrowUpRight } from "lucide-react";
 import type { Project } from "../data/projects";
+import { TiltCard } from "./effects/TiltCard";
 
 export interface ProjectCardProps {
   project: Project;
@@ -117,7 +118,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
             isReversed ? "order-2 lg:order-1" : "order-2"
           }`}
         >
-          <div className="relative rounded-2xl overflow-hidden border border-[rgba(255,255,255,0.08)] bg-[#22252A] aspect-[16/10] p-5 sm:p-6 flex flex-col justify-between group-hover:border-[#E69A3A]/30 transition-all duration-300">
+          <TiltCard className="relative rounded-2xl overflow-hidden border border-[rgba(255,255,255,0.08)] bg-[#22252A] aspect-[16/10] p-5 sm:p-6 flex flex-col justify-between group-hover:border-[#E69A3A]/30 transition-all duration-300">
             
             {/* Mockup Header */}
             <div className="flex items-center justify-between border-b border-[rgba(246,184,95,0.16)] pb-3.5">
@@ -181,7 +182,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
               className="absolute bottom-2 right-2 w-2.5 h-2.5 border-b border-r border-[#E69A3A]/30 pointer-events-none"
               aria-hidden="true"
             />
-          </div>
+          </TiltCard>
         </div>
 
       </div>

@@ -4,6 +4,7 @@ import romeoDeveloperImg from "../assets/portraits/romeo-developer.png";
 import romeoAthleteImg from "../assets/portraits/romeo-athlete.png";
 import { PortraitReveal } from "../components/PortraitReveal";
 import { TextScramble } from "../components/effects/TextScramble";
+import { AnimatedBackground } from "../components/effects/AnimatedBackground";
 
 export const Hero: React.FC = () => {
   const shouldReduceMotion = useReducedMotion();
@@ -20,15 +21,7 @@ export const Hero: React.FC = () => {
       aria-label="Hero Introduction"
       className="relative min-h-[92vh] lg:min-h-screen pt-28 md:pt-36 pb-16 md:pb-24 px-4 sm:px-6 lg:px-12 flex items-center overflow-hidden grain-overlay bg-[#111214]"
     >
-      {/* Ambient background lighting */}
-      <div
-        aria-hidden="true"
-        className="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[450px] sm:w-[550px] h-[450px] sm:h-[550px] bg-[#E69A3A]/5 rounded-full blur-[140px] pointer-events-none"
-      />
-      <div
-        aria-hidden="true"
-        className="absolute bottom-10 right-10 w-[450px] sm:w-[600px] h-[450px] sm:h-[600px] bg-[#A86F2C]/18 rounded-full blur-[160px] pointer-events-none"
-      />
+      <AnimatedBackground />
 
       {/* 12-Column Responsive Layout Container */}
       <div className="max-w-[1400px] w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center relative z-10">

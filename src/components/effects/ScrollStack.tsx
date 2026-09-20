@@ -26,7 +26,7 @@ export const ScrollStack: React.FC<ScrollStackProps> = ({
         ["--scroll-stack-index" as string]: index + 1,
       } as React.CSSProperties}
     >
-      {children}
+      <div className="scroll-stack-sticky">{children}</div>
     </div>
   );
 };

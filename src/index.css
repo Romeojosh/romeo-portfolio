@@ -83,8 +83,7 @@
 
 html {
   scroll-behavior: smooth;
-  overflow-x: clip;
-  overflow-y: visible;
+  overflow: visible;
   background-color: var(--color-background);
 }
 
@@ -95,8 +94,7 @@ body {
   background-color: var(--color-background);
   color: var(--color-text-primary);
   font-family: var(--font-body);
-  overflow-x: clip;
-  overflow-y: visible;
+  overflow: visible;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -249,31 +247,6 @@ body {
 
 .ambient-glow-bronze {
   background: radial-gradient(circle at center, rgba(168, 111, 44, 0.16) 0%, rgba(168, 111, 44, 0.035) 50%, transparent 70%);
-}
-
-/* ============================================================================
-   Featured Project Scroll Stack
-   ========================================================================== */
-.scroll-stack-item {
-  position: relative;
-  z-index: var(--scroll-stack-index, 1);
-}
-
-@media (min-width: 768px) {
-  .scroll-stack-item {
-    padding-bottom: clamp(8rem, 20vh, 16rem);
-  }
-
-  .scroll-stack-item:last-child {
-    padding-bottom: 0;
-  }
-
-  .scroll-stack-sticky {
-    position: sticky;
-    top: var(--scroll-stack-top);
-    transform: scale(var(--scroll-stack-scale));
-    transform-origin: center top;
-  }
 }
 
 /* ============================================================================

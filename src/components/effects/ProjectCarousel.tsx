@@ -67,7 +67,7 @@ export const ProjectCarousel: React.FC<ProjectCarouselProps> = ({ items }) => {
               }}
               className={`absolute left-1/2 top-1/2 h-[32rem] w-[calc(100%-3rem)] rounded-3xl border bg-[#181A1D] p-4 outline-none sm:h-[34rem] sm:w-[min(58vw,600px)] sm:p-5 lg:h-[38rem] ${
                 isActive
-                  ? "border-[#E69A3A]/60 shadow-[0_18px_60px_rgba(0,0,0,0.32)]"
+                  ? "border-[#E69A3A]/60 shadow-[0_10px_15px_rgba(0,0,0,0.32)]"
                   : "border-[rgba(255,255,255,0.08)] opacity-60 hover:border-[#A86F2C]/60 focus-visible:ring-2 focus-visible:ring-[#A86F2C]"
               }`}
               initial={false}

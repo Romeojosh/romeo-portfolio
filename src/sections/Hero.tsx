@@ -5,6 +5,7 @@ import romeoAthleteImg from "../assets/portraits/romeo-athlete.png";
 import { PortraitReveal } from "../components/PortraitReveal";
 import { TextScramble } from "../components/effects/TextScramble";
 import { AnimatedBackground } from "../components/effects/AnimatedBackground";
+import { ParticleField } from "../components/effects/ParticleField";
 
 export const Hero: React.FC = () => {
   const shouldReduceMotion = useReducedMotion();
@@ -19,9 +20,11 @@ export const Hero: React.FC = () => {
     <section
       id="hero"
       aria-label="Hero Introduction"
-      className="relative min-h-[92vh] lg:min-h-screen pt-28 md:pt-36 pb-16 md:pb-24 px-4 sm:px-6 lg:px-12 flex items-center overflow-clip grain-overlay bg-[#111214]"
+      className="relative min-h-[92vh] lg:min-h-screen pt-28 md:pt-36 pb-16 md:pb-24 px-4 sm:px-6 lg:px-12 flex items-center overflow-clip bg-[#111214]"
     >
       <AnimatedBackground />
+      <ParticleField />
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-[2] grain-overlay opacity-[0.07]" />
 
       {/* 12-Column Responsive Layout Container */}
       <div className="max-w-[1400px] w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center relative z-10">

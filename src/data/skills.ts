@@ -20,6 +20,7 @@ export const SKILL_GROUPS: SkillGroup[] = [
       "React",
       "TypeScript",
       "JavaScript",
+      "Next.js",
       "HTML",
       "CSS",
       "Tailwind CSS",
@@ -33,6 +34,10 @@ export const SKILL_GROUPS: SkillGroup[] = [
     label: "BACKEND & DATA",
     skills: [
       "Supabase",
+      "PHP",
+      "Node.js",
+      "MongoDB",
+      "MySQL",
       "PostgreSQL",
       "REST APIs",
       "SQL",

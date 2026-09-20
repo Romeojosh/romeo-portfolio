@@ -2,12 +2,9 @@ import React from "react";
 import { motion, useReducedMotion } from "motion/react";
 import { ArrowUpRight, Code2, Mail, MapPin, UserRound } from "lucide-react";
 
-// TODO: Replace with the real deployment email before publishing.
-const CONTACT_EMAIL = "your-email@example.com";
-// TODO: Add the real GitHub profile URL when it is available.
-const GITHUB_URL: string | undefined = undefined;
-// TODO: Add the real LinkedIn profile URL when it is available.
-const LINKEDIN_URL: string | undefined = undefined;
+const CONTACT_EMAIL = "romeojoshrequiron@gmail.com";
+const GITHUB_URL = "https://github.com/Romeojosh";
+const LINKEDIN_URL = "https://www.linkedin.com/in/romeojosh/";
 
 const contactDetails = [
   {
@@ -19,17 +16,17 @@ const contactDetails = [
   },
   {
     label: "GITHUB",
-    value: GITHUB_URL ?? "Link pending",
+    value: "github.com/Romeojosh",
     href: GITHUB_URL,
     icon: Code2,
-    external: false,
+    external: true,
   },
   {
     label: "LINKEDIN",
-    value: LINKEDIN_URL ?? "Link pending",
+    value: "linkedin.com/in/romeojosh/",
     href: LINKEDIN_URL,
     icon: UserRound,
-    external: false,
+    external: true,
   },
   {
     label: "LOCATION",
@@ -141,6 +138,7 @@ export const Contact: React.FC = () => {
                     {detail.href ? (
                       <a
                         href={detail.href}
+                        {...(detail.external ? { target: "_blank", rel: "noreferrer" } : {})}
                         className="flex min-w-0 flex-1 items-center gap-3 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E69A3A]"
                       >
                         {content}

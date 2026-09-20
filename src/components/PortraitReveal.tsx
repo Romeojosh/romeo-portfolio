@@ -183,6 +183,7 @@ export const PortraitReveal: React.FC<PortraitRevealProps> = ({
   return (
     <div
       ref={containerRef}
+      data-cursor="reveal"
       onPointerEnter={handlePointerEnter}
       onPointerMove={handlePointerMove}
       onPointerLeave={handlePointerLeave}

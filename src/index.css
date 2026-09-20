@@ -249,6 +249,74 @@ body {
   background: radial-gradient(circle at center, rgba(168, 111, 44, 0.16) 0%, rgba(168, 111, 44, 0.035) 50%, transparent 70%);
 }
 
+/* ============================================================================
+   Desktop Custom Cursor
+   ========================================================================== */
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 12px;
+  height: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-gold);
+  border-radius: 9999px;
+  background: rgba(17, 18, 20, 0.18);
+  box-shadow: 0 0 12px rgba(230, 154, 58, 0.24);
+  opacity: 0;
+  pointer-events: none;
+  will-change: transform, width, height, opacity;
+  transition: width 180ms ease, height 180ms ease, border-color 180ms ease, box-shadow 180ms ease, opacity 180ms ease;
+}
+
+.custom-cursor-label {
+  color: var(--color-text-primary);
+  font-family: var(--font-mono);
+  font-size: 0.5rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  line-height: 1;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.custom-cursor[data-state="link"] {
+  width: 20px;
+  height: 20px;
+  border-color: var(--color-gold);
+  box-shadow: 0 0 16px rgba(246, 184, 95, 0.3);
+}
+
+.custom-cursor[data-state="view"] {
+  width: 64px;
+  height: 64px;
+  border-color: var(--color-gold);
+  background: rgba(17, 18, 20, 0.42);
+  box-shadow: 0 0 22px rgba(230, 154, 58, 0.26);
+}
+
+.custom-cursor[data-state="reveal"] {
+  width: 30px;
+  height: 30px;
+  border-color: var(--color-amber);
+  box-shadow: 0 0 18px rgba(230, 154, 58, 0.28);
+}
+
+@media (hover: none), (pointer: coarse) {
+  .custom-cursor {
+    display: none;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .custom-cursor-enabled * {
+    cursor: none !important;
+  }
+}
+
 /* ==========================================================================
    Layout Utilities
    ========================================================================== */

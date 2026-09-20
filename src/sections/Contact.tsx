@@ -101,6 +101,7 @@ export const Contact: React.FC = () => {
               viewport={{ once: true }}
               transition={{ ...transition, delay: shouldReduceMotion ? 0 : 0.28 }}
               href={`mailto:${CONTACT_EMAIL}`}
+              data-cursor="link"
               className="mt-9 inline-flex items-center gap-3 rounded-full bg-[#E69A3A] px-6 py-3.5 font-display text-sm font-bold tracking-wide text-[#111214] shadow-[0_0_25px_rgba(230,154,58,0.2)] transition-all duration-200 hover:bg-[#F6B85F] hover:shadow-[0_0_35px_rgba(246,184,95,0.32)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E69A3A] focus-visible:ring-offset-2 focus-visible:ring-offset-[#111214] sm:px-7"
               aria-label="Start a conversation by email"
             >
@@ -138,6 +139,7 @@ export const Contact: React.FC = () => {
                     {detail.href ? (
                       <a
                         href={detail.href}
+                        data-cursor="link"
                         {...(detail.external ? { target: "_blank", rel: "noreferrer" } : {})}
                         className="flex min-w-0 flex-1 items-center gap-3 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E69A3A]"
                       >

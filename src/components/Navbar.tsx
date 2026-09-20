@@ -58,6 +58,7 @@ export const Navbar: React.FC = () => {
         <a
           href="#hero"
           aria-label="Romeo Josh C. Requiron Home"
+          data-cursor="link"
           onClick={closeMobileMenu}
           className="flex items-center gap-2 group rounded-full focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#E69A3A]"
         >
@@ -76,6 +77,7 @@ export const Navbar: React.FC = () => {
             <li key={link.href}>
               <a
                 href={link.href}
+                data-cursor="link"
                 className="hover:text-[#F6B85F] transition-colors py-1 focus-visible:outline-none focus-visible:text-[#F6B85F] focus-visible:ring-1 focus-visible:ring-[#E69A3A] rounded"
               >
                 {link.label}
@@ -88,6 +90,7 @@ export const Navbar: React.FC = () => {
         <div className="flex items-center gap-2">
           <a
             href="#contact"
+            data-cursor="link"
             onClick={closeMobileMenu}
             className="hidden sm:flex items-center gap-1.5 px-4 py-1.5 text-xs font-mono uppercase tracking-wider rounded-full bg-[#22252A] border border-[rgba(255,255,255,0.08)] text-[#F3F2EE] hover:border-[#E69A3A] hover:text-[#F6B85F] hover:bg-[#E69A3A]/10 transition-all focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#E69A3A]"
           >
@@ -125,6 +128,7 @@ export const Navbar: React.FC = () => {
                 <li key={link.href}>
                   <a
                     href={link.href}
+                    data-cursor="link"
                     onClick={closeMobileMenu}
                     className="block py-2 px-3 rounded-lg text-[#F3EEE8] hover:text-[#E69A3A] hover:bg-[#22252A] transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#E69A3A]"
                   >
@@ -137,6 +141,7 @@ export const Navbar: React.FC = () => {
             <div className="pt-3 border-t border-[rgba(246,184,95,0.16)] sm:hidden">
               <a
                 href="#contact"
+                data-cursor="link"
                 onClick={closeMobileMenu}
                 className="flex items-center justify-center gap-2 w-full py-2.5 px-4 text-xs font-mono uppercase tracking-wider rounded-xl bg-[#22252A] border border-[rgba(246,184,95,0.2)] text-[#F3EEE8] hover:border-[#E69A3A] hover:text-[#F6B85F] transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#E69A3A]"
               >

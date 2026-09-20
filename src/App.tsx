@@ -7,10 +7,12 @@ import { Skills } from "./sections/Skills";
 import { Discipline } from "./sections/Discipline";
 import { Contact } from "./sections/Contact";
 import { Footer } from "./components/Footer";
+import { CustomCursor } from "./components/effects/CustomCursor";
 
 export const App: React.FC = () => {
   return (
     <PageShell>
+      <CustomCursor />
       {/* Real Hero Section */}
       <Hero />
 

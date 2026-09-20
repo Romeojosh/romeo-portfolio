@@ -19,6 +19,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   return (
     <article
       aria-labelledby={`project-title-${project.id}`}
+      data-cursor="view"
       className="p-6 sm:p-8 lg:p-12 rounded-3xl bg-[#181A1D] border border-[rgba(255,255,255,0.08)] hover:border-[#E69A3A]/40 transition-all duration-300 group relative overflow-hidden shadow-lg"
     >
       {/* Subtle ambient hover highlight */}
@@ -85,6 +86,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
               {project.liveUrl && (
                 <a
                   href={project.liveUrl}
+                  data-cursor="link"
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-wider text-[#E69A3A] hover:text-[#F6B85F] transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#E69A3A] rounded py-1"
@@ -96,6 +98,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
               {project.githubUrl && (
                 <a
                   href={project.githubUrl}
+                  data-cursor="link"
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-wider text-[#AFA49A] hover:text-[#F3EEE8] transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#E69A3A] rounded py-1"

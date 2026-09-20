@@ -87,6 +87,7 @@ export const Hero: React.FC = () => {
           >
             <a
               href="#work"
+              data-cursor="link"
             className="px-7 py-3.5 rounded-full bg-[#E69A3A] hover:bg-[#F6B85F] text-[#111214] font-display font-bold text-sm tracking-wide transition-all duration-200 shadow-[0_0_25px_rgba(230,154,58,0.25)] hover:shadow-[0_0_35px_rgba(246,184,95,0.4)] flex items-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E69A3A] focus-visible:ring-offset-2 focus-visible:ring-offset-[#111214]"
             >
               <span>View Projects</span>
@@ -94,6 +95,7 @@ export const Hero: React.FC = () => {
             </a>
             <a
               href="#about"
+              data-cursor="link"
               className="px-7 py-3.5 rounded-full border border-[rgba(255,255,255,0.08)] hover:border-[#E69A3A]/60 hover:bg-[#E69A3A]/5 text-[#F3F2EE] font-display text-sm tracking-wide transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E69A3A] focus-visible:ring-offset-2 focus-visible:ring-offset-[#111214]"
             >
               About Me

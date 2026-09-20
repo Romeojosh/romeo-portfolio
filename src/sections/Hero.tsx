@@ -1,6 +1,8 @@
 import React from "react";
 import { motion, useReducedMotion } from "motion/react";
 import romeoDeveloperImg from "../assets/portraits/romeo-developer.jpg";
+import romeoAthleteImg from "../assets/portraits/romeo-athlete.jpg";
+import { PortraitReveal } from "../components/PortraitReveal";
 
 export const Hero: React.FC = () => {
   const shouldReduceMotion = useReducedMotion();
@@ -129,33 +131,13 @@ export const Hero: React.FC = () => {
               [ FIG. 01 — DUAL IDENTITY ]
             </div>
 
-            {/* Portrait Frame Container */}
-            <div className="relative aspect-[4/5] w-full rounded-2xl overflow-hidden border border-[rgba(246,184,95,0.16)] bg-[#15100D] shadow-2xl shadow-black/80">
-              <img
-                src={romeoDeveloperImg}
-                alt="Romeo Josh — Technologist & Developer Portrait"
-                className="w-full h-full object-cover object-top block select-none"
-                loading="eager"
-              />
-
-              {/* Subtle technical corner marks: thin amber hairlines */}
-              <div
-                className="absolute top-2.5 left-2.5 w-2.5 h-2.5 border-t border-l border-[#E69A3A]/50 pointer-events-none"
-                aria-hidden="true"
-              />
-              <div
-                className="absolute top-2.5 right-2.5 w-2.5 h-2.5 border-t border-r border-[#E69A3A]/50 pointer-events-none"
-                aria-hidden="true"
-              />
-              <div
-                className="absolute bottom-2.5 left-2.5 w-2.5 h-2.5 border-b border-l border-[#E69A3A]/50 pointer-events-none"
-                aria-hidden="true"
-              />
-              <div
-                className="absolute bottom-2.5 right-2.5 w-2.5 h-2.5 border-b border-r border-[#E69A3A]/50 pointer-events-none"
-                aria-hidden="true"
-              />
-            </div>
+            {/* Interactive Portrait Reveal Frame */}
+            <PortraitReveal
+              developerSrc={romeoDeveloperImg}
+              athleteSrc={romeoAthleteImg}
+              developerAlt="Romeo Josh — Technologist & Developer Portrait"
+              athleteAlt="Romeo Josh — Western Institute of Technology Athlete Portrait"
+            />
 
             {/* Bottom Captions */}
             <div className="flex items-center justify-between text-[11px] font-mono text-[#AFA49A]/70 tracking-widest uppercase mt-3 px-1">

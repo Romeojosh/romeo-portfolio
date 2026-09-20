@@ -14,7 +14,7 @@ export const Skills: React.FC = () => {
     <section
       id="skills"
       aria-label="Tech Stack & Capabilities"
-      className="py-20 sm:py-24 md:py-28 px-4 sm:px-6 lg:px-12 border-t border-[rgba(246,184,95,0.16)] relative scroll-mt-24 md:scroll-mt-28"
+      className="py-20 sm:py-24 md:py-28 px-4 sm:px-6 lg:px-12 border-t border-[rgba(246,184,95,0.16)] relative scroll-mt-24 md:scroll-mt-28 bg-[#111214]"
     >
       <div className="max-w-[1400px] mx-auto">
 
@@ -105,8 +105,8 @@ export const Skills: React.FC = () => {
               const valueClass =
                 stat.accent === "gradient"
                   ? "text-gradient-amber-lemon"
-                  : stat.accent === "olive"
-                  ? "text-[#8E9A46]"
+                  : stat.accent === "bronze"
+                  ? "text-[#A86F2C]"
                   : "text-[#E69A3A]";
 
               return (

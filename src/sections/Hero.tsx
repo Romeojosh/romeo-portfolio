@@ -17,7 +17,7 @@ export const Hero: React.FC = () => {
     <section
       id="hero"
       aria-label="Hero Introduction"
-      className="relative min-h-[92vh] lg:min-h-screen pt-28 md:pt-36 pb-16 md:pb-24 px-4 sm:px-6 lg:px-12 flex items-center overflow-hidden grain-overlay"
+      className="relative min-h-[92vh] lg:min-h-screen pt-28 md:pt-36 pb-16 md:pb-24 px-4 sm:px-6 lg:px-12 flex items-center overflow-hidden grain-overlay bg-[#111214]"
     >
       {/* Ambient background lighting */}
       <div
@@ -40,7 +40,7 @@ export const Hero: React.FC = () => {
             initial={shouldReduceMotion ? false : { opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={transitionBase}
-            className="inline-flex items-center gap-3 self-start px-3.5 py-1.5 rounded-full bg-[#15100D] border border-[rgba(246,184,95,0.16)] text-[#AFA49A] text-[11px] font-mono tracking-widest uppercase shadow-sm"
+            className="inline-flex items-center gap-3 self-start px-3.5 py-1.5 rounded-full bg-[#181A1D] border border-[rgba(255,255,255,0.08)] text-[#A6A8AD] text-[11px] font-mono tracking-widest uppercase shadow-sm"
           >
             <span
               className="w-2 h-2 rounded-full bg-[#E69A3A] shadow-[0_0_8px_#E69A3A] shrink-0"
@@ -56,9 +56,9 @@ export const Hero: React.FC = () => {
             transition={{ ...transitionBase, delay: shouldReduceMotion ? 0 : 0.1 }}
           >
             <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-[7.25rem] xl:text-[7.75rem] font-extrabold font-display uppercase tracking-tight text-[#F3EEE8] leading-[0.88] m-0">
-              ROMEO<br />
+              ROMEO JOSH C.<br />
               <span className="text-gradient-amber-lemon tracking-tight inline-block">
-                JOSH
+                REQUIRON
               </span>
             </h1>
 
@@ -87,14 +87,14 @@ export const Hero: React.FC = () => {
           >
             <a
               href="#work"
-              className="px-7 py-3.5 rounded-full bg-[#E69A3A] hover:bg-[#F6B85F] text-[#0B0908] font-display font-bold text-sm tracking-wide transition-all duration-200 shadow-[0_0_25px_rgba(230,154,58,0.25)] hover:shadow-[0_0_35px_rgba(246,184,95,0.4)] flex items-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E69A3A] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0B0908]"
+            className="px-7 py-3.5 rounded-full bg-[#E69A3A] hover:bg-[#F6B85F] text-[#111214] font-display font-bold text-sm tracking-wide transition-all duration-200 shadow-[0_0_25px_rgba(230,154,58,0.25)] hover:shadow-[0_0_35px_rgba(246,184,95,0.4)] flex items-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E69A3A] focus-visible:ring-offset-2 focus-visible:ring-offset-[#111214]"
             >
               <span>View Projects</span>
               <span aria-hidden="true">↓</span>
             </a>
             <a
               href="#about"
-              className="px-7 py-3.5 rounded-full border border-[rgba(246,184,95,0.16)] hover:border-[#E69A3A]/60 hover:bg-[#E69A3A]/5 text-[#F3EEE8] font-display text-sm tracking-wide transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E69A3A] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0B0908]"
+              className="px-7 py-3.5 rounded-full border border-[rgba(255,255,255,0.08)] hover:border-[#E69A3A]/60 hover:bg-[#E69A3A]/5 text-[#F3F2EE] font-display text-sm tracking-wide transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E69A3A] focus-visible:ring-offset-2 focus-visible:ring-offset-[#111214]"
             >
               About Me
             </a>
@@ -135,14 +135,14 @@ export const Hero: React.FC = () => {
             <PortraitReveal
               developerSrc={romeoDeveloperImg}
               athleteSrc={romeoAthleteImg}
-              developerAlt="Romeo Josh — Technologist & Developer Portrait"
-              athleteAlt="Romeo Josh — Western Institute of Technology Athlete Portrait"
+              developerAlt="Romeo Josh C. Requiron — Technologist & Developer Portrait"
+              athleteAlt="Romeo Josh C. Requiron — Western Institute of Technology Athlete Portrait"
             />
 
             {/* Bottom Captions */}
             <div className="flex items-center justify-between text-[11px] font-mono text-[#AFA49A]/70 tracking-widest uppercase mt-3 px-1">
               <span>TECH LAYER // DEFAULT</span>
-              <span className="text-[#8E9A46]">WIT VARSITY // LENS</span>
+              <span className="text-[#A86F2C]">WIT VARSITY // LENS</span>
             </div>
           </div>
         </motion.div>

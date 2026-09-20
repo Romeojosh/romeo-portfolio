@@ -13,7 +13,7 @@ export const About: React.FC = () => {
     <section
       id="about"
       aria-label="Origin & Philosophy"
-      className="py-20 sm:py-24 md:py-28 px-4 sm:px-6 lg:px-12 border-t border-[rgba(246,184,95,0.16)] relative scroll-mt-24 md:scroll-mt-28"
+      className="py-20 sm:py-24 md:py-28 px-4 sm:px-6 lg:px-12 border-t border-[rgba(246,184,95,0.16)] relative scroll-mt-24 md:scroll-mt-28 bg-[#111214]"
     >
       <div className="max-w-[1400px] mx-auto">
         
@@ -50,7 +50,7 @@ export const About: React.FC = () => {
               </h2>
 
               {/* Athletic Motto Block (Desktop) */}
-              <div className="hidden lg:block mt-10 p-6 rounded-2xl bg-[#15100D] border border-[rgba(246,184,95,0.16)]">
+              <div className="hidden lg:block mt-10 p-6 rounded-2xl bg-[#181A1D] border border-[rgba(255,255,255,0.08)]">
                 <span className="text-xs font-mono tracking-widest text-[#E69A3A] uppercase block mb-2.5">
                   Athletic Mindset
                 </span>
@@ -95,7 +95,7 @@ export const About: React.FC = () => {
               className="grid grid-cols-1 md:grid-cols-3 gap-5 pt-6 border-t border-[rgba(246,184,95,0.16)]"
             >
               {/* Card 1: Based In */}
-              <div className="p-5 rounded-xl bg-[#15100D] border border-[rgba(246,184,95,0.16)] transition-all duration-300 hover:border-[#E69A3A]/30">
+              <div className="p-5 rounded-xl bg-[#181A1D] border border-[rgba(255,255,255,0.08)] transition-all duration-300 hover:border-[#E69A3A]/30">
                 <span className="text-[10px] font-mono tracking-widest uppercase text-[#AFA49A] block mb-1.5">
                   BASED IN
                 </span>
@@ -108,7 +108,7 @@ export const About: React.FC = () => {
               </div>
 
               {/* Card 2: Core Focus */}
-              <div className="p-5 rounded-xl bg-[#15100D] border border-[rgba(246,184,95,0.16)] transition-all duration-300 hover:border-[#E69A3A]/30">
+              <div className="p-5 rounded-xl bg-[#181A1D] border border-[rgba(255,255,255,0.08)] transition-all duration-300 hover:border-[#E69A3A]/30">
                 <span className="text-[10px] font-mono tracking-widest uppercase text-[#AFA49A] block mb-1.5">
                   CORE FOCUS
                 </span>
@@ -121,14 +121,14 @@ export const About: React.FC = () => {
               </div>
 
               {/* Card 3: Discipline */}
-              <div className="p-5 rounded-xl bg-[#15100D] border border-[rgba(246,184,95,0.16)] transition-all duration-300 hover:border-[#E69A3A]/30">
+              <div className="p-5 rounded-xl bg-[#181A1D] border border-[rgba(255,255,255,0.08)] transition-all duration-300 hover:border-[#E69A3A]/30">
                 <span className="text-[10px] font-mono tracking-widest uppercase text-[#AFA49A] block mb-1.5">
                   DISCIPLINE
                 </span>
                 <p className="text-sm font-display font-semibold text-[#F3EEE8] m-0">
                   Student • Developer • Athlete
                 </p>
-                <span className="text-[11px] font-mono text-[#8E9A46] block mt-1.5">
+                <span className="text-[11px] font-mono text-[#A86F2C] block mt-1.5">
                   Learning through consistency
                 </span>
               </div>
@@ -140,7 +140,7 @@ export const About: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ ...transitionBase, delay: shouldReduceMotion ? 0 : 0.3 }}
-              className="p-6 sm:p-7 rounded-2xl bg-gradient-to-r from-[#211813] to-[#15100D] border-l-2 border-l-[#E69A3A] border-t border-r border-b border-[rgba(246,184,95,0.16)]"
+              className="p-6 sm:p-7 rounded-2xl bg-gradient-to-r from-[#22252A] to-[#181A1D] border-l-2 border-l-[#E69A3A] border-t border-r border-b border-[rgba(255,255,255,0.08)]"
             >
               <span className="text-xs font-mono tracking-widest uppercase text-[#AFA49A] block mb-2.5">
                 HOW I APPROACH THE WORK

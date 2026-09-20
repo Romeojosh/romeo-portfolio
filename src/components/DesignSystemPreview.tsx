@@ -10,14 +10,15 @@ export const DesignSystemPreview: React.FC = () => {
     { name: "Amber", token: "--color-amber", value: DESIGN_TOKENS.colors.amber, textDark: true },
     { name: "Gold", token: "--color-gold", value: DESIGN_TOKENS.colors.gold, textDark: true },
     { name: "Bronze", token: "--color-bronze", value: DESIGN_TOKENS.colors.bronze, textDark: false },
-    { name: "Olive", token: "--color-olive", value: DESIGN_TOKENS.colors.olive, textDark: false },
+    { name: "Lemon", token: "--color-lemon", value: DESIGN_TOKENS.colors.lemon, textDark: true },
+    { name: "Bronze", token: "--color-bronze", value: DESIGN_TOKENS.colors.bronze, textDark: false },
     { name: "Text Primary", token: "--color-text-primary", value: DESIGN_TOKENS.colors.textPrimary, textDark: true },
     { name: "Text Secondary", token: "--color-text-secondary", value: DESIGN_TOKENS.colors.textSecondary, textDark: true },
     { name: "Hairline", token: "--color-hairline", value: DESIGN_TOKENS.colors.hairline, textDark: false, isBorder: true },
   ];
 
   return (
-    <div className="min-h-screen bg-[#0B0908] text-[#F3EEE8] relative selection:bg-[#E69A3A] selection:text-[#0B0908]">
+    <div className="min-h-screen bg-[#111214] text-[#F3EEE8] relative selection:bg-[#E69A3A] selection:text-[#111214]">
       {/* Subtle Ambient Background Lighting */}
       <div className="pointer-events-none fixed inset-0 overflow-hidden">
         <div className="absolute -top-40 -left-40 w-[600px] h-[600px] ambient-glow-amber opacity-60" />
@@ -215,7 +216,7 @@ export const DesignSystemPreview: React.FC = () => {
                 <div>
                   <span className="type-micro-label text-[#E69A3A]">Primary Button Specs:</span>
                   <p className="type-body-muted text-xs mt-1">
-                    Solid amber background (#E69A3A), dark obsidian text (#0B0908), subtle warm glow shadow, transitions to gold (#F6B85F) on hover.
+                    Solid amber background (#E69A3A), dark graphite text (#111214), subtle warm glow shadow, transitions to gold (#F6B85F) on hover.
                   </p>
                 </div>
                 <div>
@@ -246,7 +247,7 @@ export const DesignSystemPreview: React.FC = () => {
                 <span className="type-micro-label text-[#E69A3A]">.surface-base</span>
                 <h4 className="type-section-heading text-lg text-[#F3EEE8]">Base Surface</h4>
                 <p className="type-body-muted text-xs">
-                  #15100D &bull; Standard background for cards, list items, and contained structural modules.
+                  #181A1D &bull; Standard background for cards, list items, and contained structural modules.
                 </p>
               </div>
 
@@ -255,7 +256,7 @@ export const DesignSystemPreview: React.FC = () => {
                 <span className="type-micro-label text-[#E69A3A]">.surface-elevated</span>
                 <h4 className="type-section-heading text-lg text-[#F3EEE8]">Elevated Surface</h4>
                 <p className="type-body-muted text-xs">
-                  #211813 &bull; Higher tonal elevation for active states, modals, floating triggers, and popovers.
+                  #22252A &bull; Higher tonal elevation for active states, modals, floating triggers, and popovers.
                 </p>
               </div>
 
@@ -371,7 +372,7 @@ export const DesignSystemPreview: React.FC = () => {
             ROMEO JOSH &bull; DESIGN SYSTEM VERIFIED &bull; READY FOR PHASE 3
           </div>
           <div className="type-micro-label text-[#E69A3A]">
-            OBSIDIAN + AMBER + BRONZE + OLIVE
+            GRAPHITE + AMBER + GOLD + BRONZE
           </div>
         </footer>
       </div>

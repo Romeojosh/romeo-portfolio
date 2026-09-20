@@ -50,18 +50,18 @@ export const Navbar: React.FC = () => {
         aria-label="Main Navigation"
         className={`max-w-[1000px] mx-auto rounded-full px-4 sm:px-5 py-2.5 flex items-center justify-between pointer-events-auto transition-all duration-300 ${
           isScrolled
-            ? "bg-[#15100D]/95 border border-[rgba(246,184,95,0.24)] shadow-2xl shadow-black/80 backdrop-blur-md"
-            : "bg-[#15100D]/80 border border-[rgba(246,184,95,0.14)] shadow-lg shadow-black/40 backdrop-blur-md hover:border-[rgba(246,184,95,0.3)]"
+            ? "bg-[rgba(24,26,29,0.95)] border border-[rgba(255,255,255,0.08)] shadow-2xl shadow-black/50 backdrop-blur-md"
+            : "bg-[rgba(24,26,29,0.85)] border border-[rgba(255,255,255,0.08)] shadow-lg shadow-black/30 backdrop-blur-md hover:border-[rgba(230,154,58,0.3)]"
         }`}
       >
         {/* Left: RJ Monogram & Status indicator */}
         <a
           href="#hero"
-          aria-label="Romeo Josh Home"
+          aria-label="Romeo Josh C. Requiron Home"
           onClick={closeMobileMenu}
           className="flex items-center gap-2 group rounded-full focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#E69A3A]"
         >
-          <div className="w-8 h-8 rounded-full bg-[#211813] border border-[rgba(246,184,95,0.16)] flex items-center justify-center font-display font-extrabold text-sm tracking-tighter text-[#F3EEE8] group-hover:border-[#E69A3A] group-hover:text-[#E69A3A] transition-colors">
+          <div className="w-8 h-8 rounded-full bg-[#22252A] border border-[rgba(255,255,255,0.08)] flex items-center justify-center font-display font-extrabold text-sm tracking-tighter text-[#F3F2EE] group-hover:border-[#E69A3A] group-hover:text-[#E69A3A] transition-colors">
             RJ
           </div>
           <span
@@ -71,7 +71,7 @@ export const Navbar: React.FC = () => {
         </a>
 
         {/* Center: Desktop Navigation Links */}
-        <ul className="hidden md:flex items-center gap-7 text-xs font-mono tracking-widest uppercase text-[#AFA49A]">
+        <ul className="hidden md:flex items-center gap-7 text-xs font-mono tracking-widest uppercase text-[#A6A8AD]">
           {NAV_LINKS.map((link) => (
             <li key={link.href}>
               <a
@@ -89,7 +89,7 @@ export const Navbar: React.FC = () => {
           <a
             href="#contact"
             onClick={closeMobileMenu}
-            className="hidden sm:flex items-center gap-1.5 px-4 py-1.5 text-xs font-mono uppercase tracking-wider rounded-full bg-[#211813] border border-[rgba(246,184,95,0.16)] text-[#F3EEE8] hover:border-[#E69A3A] hover:text-[#F6B85F] hover:bg-[#E69A3A]/10 transition-all focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#E69A3A]"
+            className="hidden sm:flex items-center gap-1.5 px-4 py-1.5 text-xs font-mono uppercase tracking-wider rounded-full bg-[#22252A] border border-[rgba(255,255,255,0.08)] text-[#F3F2EE] hover:border-[#E69A3A] hover:text-[#F6B85F] hover:bg-[#E69A3A]/10 transition-all focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#E69A3A]"
           >
             <span>Let's Talk</span>
             <ArrowRight className="w-3.5 h-3.5 text-[#E69A3A]" aria-hidden="true" />
@@ -102,7 +102,7 @@ export const Navbar: React.FC = () => {
             aria-expanded={isMobileMenuOpen}
             aria-controls="mobile-nav-menu"
             aria-label={isMobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
-            className="md:hidden flex items-center justify-center w-8 h-8 rounded-full bg-[#211813] border border-[rgba(246,184,95,0.16)] text-[#F3EEE8] hover:border-[#E69A3A] hover:text-[#E69A3A] transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#E69A3A]"
+            className="md:hidden flex items-center justify-center w-8 h-8 rounded-full bg-[#22252A] border border-[rgba(255,255,255,0.08)] text-[#F3F2EE] hover:border-[#E69A3A] hover:text-[#E69A3A] transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#E69A3A]"
           >
             {isMobileMenuOpen ? (
               <X className="w-4 h-4" aria-hidden="true" />
@@ -119,14 +119,14 @@ export const Navbar: React.FC = () => {
           id="mobile-nav-menu"
           className="md:hidden max-w-[1000px] mx-auto mt-2 pointer-events-auto transition-all animate-in fade-in slide-in-from-top-2 duration-200"
         >
-          <div className="bg-[#15100D]/95 backdrop-blur-xl border border-[rgba(246,184,95,0.2)] rounded-2xl p-5 shadow-2xl space-y-4">
-            <ul className="space-y-3 font-mono text-xs uppercase tracking-widest text-[#AFA49A]">
+          <div className="bg-[rgba(24,26,29,0.95)] backdrop-blur-xl border border-[rgba(255,255,255,0.08)] rounded-2xl p-5 shadow-lg space-y-4">
+            <ul className="space-y-3 font-mono text-xs uppercase tracking-widest text-[#A6A8AD]">
               {NAV_LINKS.map((link) => (
                 <li key={link.href}>
                   <a
                     href={link.href}
                     onClick={closeMobileMenu}
-                    className="block py-2 px-3 rounded-lg text-[#F3EEE8] hover:text-[#E69A3A] hover:bg-[#211813] transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#E69A3A]"
+                    className="block py-2 px-3 rounded-lg text-[#F3EEE8] hover:text-[#E69A3A] hover:bg-[#22252A] transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#E69A3A]"
                   >
                     {link.label}
                   </a>
@@ -138,7 +138,7 @@ export const Navbar: React.FC = () => {
               <a
                 href="#contact"
                 onClick={closeMobileMenu}
-                className="flex items-center justify-center gap-2 w-full py-2.5 px-4 text-xs font-mono uppercase tracking-wider rounded-xl bg-[#211813] border border-[rgba(246,184,95,0.2)] text-[#F3EEE8] hover:border-[#E69A3A] hover:text-[#F6B85F] transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#E69A3A]"
+                className="flex items-center justify-center gap-2 w-full py-2.5 px-4 text-xs font-mono uppercase tracking-wider rounded-xl bg-[#22252A] border border-[rgba(246,184,95,0.2)] text-[#F3EEE8] hover:border-[#E69A3A] hover:text-[#F6B85F] transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#E69A3A]"
               >
                 <span>Let's Talk</span>
                 <ArrowRight className="w-3.5 h-3.5 text-[#E69A3A]" aria-hidden="true" />

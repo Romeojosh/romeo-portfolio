@@ -14,13 +14,12 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   isReversed = false,
 }) => {
   const isBronzeAccent = project.accent === "bronze";
-  const isOliveAccent = project.accent === "olive";
   const projectNumber = project.number || String(index + 1).padStart(2, "0");
 
   return (
     <article
       aria-labelledby={`project-title-${project.id}`}
-      className="p-6 sm:p-8 lg:p-12 rounded-3xl bg-[#15100D] border border-[rgba(246,184,95,0.16)] hover:border-[#E69A3A]/40 transition-all duration-300 group relative overflow-hidden shadow-xl"
+      className="p-6 sm:p-8 lg:p-12 rounded-3xl bg-[#181A1D] border border-[rgba(255,255,255,0.08)] hover:border-[#E69A3A]/40 transition-all duration-300 group relative overflow-hidden shadow-lg"
     >
       {/* Subtle ambient hover highlight */}
       <div
@@ -45,14 +44,12 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
               className={`px-3 py-1 rounded-full text-[10px] font-mono uppercase tracking-widest ${
                 isBronzeAccent
                   ? "bg-[#A86F2C]/15 text-[#F6B85F] border border-[#A86F2C]/45"
-                  : isOliveAccent
-                  ? "bg-[#8E9A46]/12 text-[#F3EEE8] border border-[#8E9A46]/40"
-                  : "bg-[#E69A3A]/15 text-[#F6B85F] border border-[#E69A3A]/30"
+                  : "bg-[#E69A3A]/10 text-[#F6B85F] border border-[#E69A3A]/30"
               }`}
             >
               {project.category}
             </span>
-            <span className="text-xs font-mono text-[#AFA49A] tracking-widest">
+            <span className="text-xs font-mono text-[#74787F] tracking-widest">
               // {project.year}
             </span>
           </div>
@@ -66,7 +63,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
           </h3>
 
           {/* Project Description */}
-          <p className="text-sm sm:text-base text-[#AFA49A] font-light leading-relaxed m-0">
+          <p className="text-sm sm:text-base text-[#A6A8AD] font-light leading-relaxed m-0">
             {project.description}
           </p>
 
@@ -75,7 +72,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
             {project.technologies.map((tech) => (
               <span
                 key={tech}
-                className="px-3 py-1 rounded-md bg-[#211813] border border-[rgba(246,184,95,0.16)] text-xs font-mono text-[#F3EEE8] hover:border-[#E69A3A]/40 transition-colors"
+                className="px-3 py-1 rounded-md bg-[#22252A] border border-[rgba(255,255,255,0.08)] text-xs font-mono text-[#F3F2EE] hover:border-[#E69A3A]/40 transition-colors"
               >
                 {tech}
               </span>
@@ -117,7 +114,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
             isReversed ? "order-2 lg:order-1" : "order-2"
           }`}
         >
-          <div className="relative rounded-2xl overflow-hidden border border-[rgba(246,184,95,0.16)] bg-[#211813] aspect-[16/10] p-5 sm:p-6 flex flex-col justify-between group-hover:border-[#E69A3A]/30 transition-all duration-300">
+          <div className="relative rounded-2xl overflow-hidden border border-[rgba(255,255,255,0.08)] bg-[#22252A] aspect-[16/10] p-5 sm:p-6 flex flex-col justify-between group-hover:border-[#E69A3A]/30 transition-all duration-300">
             
             {/* Mockup Header */}
             <div className="flex items-center justify-between border-b border-[rgba(246,184,95,0.16)] pb-3.5">
@@ -127,11 +124,11 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
               <div className="flex items-center gap-2">
                 <span
                   className={`w-2 h-2 rounded-full ${
-                    isBronzeAccent ? "bg-[#A86F2C]" : isOliveAccent ? "bg-[#8E9A46]" : "bg-[#E69A3A]"
+                    isBronzeAccent ? "bg-[#A86F2C]" : "bg-[#E69A3A]"
                   }`}
                   aria-hidden="true"
                 />
-                <span className="text-[10px] font-mono text-[#AFA49A] uppercase hidden sm:inline-block">
+                <span className="text-[10px] font-mono text-[#74787F] uppercase hidden sm:inline-block">
                   {project.mockup.statusBadge}
                 </span>
               </div>
@@ -142,7 +139,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
               {project.mockup.workflowSteps.map((step, stepIndex) => (
                 <div
                   key={step.label}
-                  className="p-3 bg-[#0B0908]/80 rounded-lg border border-[rgba(246,184,95,0.12)] flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 text-xs font-mono"
+                  className="p-3 bg-[#111214]/80 rounded-lg border border-[rgba(255,255,255,0.08)] flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 text-xs font-mono"
                 >
                   <div className="flex items-center gap-2">
                     <span className="text-[10px] text-[#E69A3A]">

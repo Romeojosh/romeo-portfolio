@@ -15,7 +15,7 @@ export const Projects: React.FC = () => {
     <section
       id="work"
       aria-label="Selected Work"
-      className="py-20 sm:py-24 md:py-28 px-4 sm:px-6 lg:px-12 border-t border-[rgba(246,184,95,0.16)] bg-[#15100D]/30 relative scroll-mt-24 md:scroll-mt-28"
+      className="py-20 sm:py-24 md:py-28 px-4 sm:px-6 lg:px-12 border-t border-[rgba(255,255,255,0.08)] bg-[#111214] relative scroll-mt-24 md:scroll-mt-28"
     >
       <div className="max-w-[1400px] mx-auto">
         
@@ -31,7 +31,7 @@ export const Projects: React.FC = () => {
             <div className="flex items-center gap-3 text-xs font-mono tracking-widest uppercase text-[#E69A3A] mb-3">
               <span>[ 02 ]</span>
               <span className="w-8 h-[1px] bg-[#E69A3A]/40" aria-hidden="true" />
-              <span className="text-[#AFA49A]">Engineered Products</span>
+              <span className="text-[#A6A8AD]">Engineered Products</span>
             </div>
 
             {/* Main Section Heading */}
@@ -49,7 +49,7 @@ export const Projects: React.FC = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ ...transitionBase, delay: shouldReduceMotion ? 0 : 0.15 }}
-            className="text-xs font-mono tracking-widest uppercase text-[#AFA49A]"
+            className="text-xs font-mono tracking-widest uppercase text-[#74787F]"
           >
             PRODUCTION DEPLOYMENTS // 2025 — 2026
           </motion.div>

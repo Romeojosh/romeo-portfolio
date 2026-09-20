@@ -21,7 +21,7 @@ export interface Project {
   liveUrl?: string;
   githubUrl?: string;
   caseStudyUrl?: string;
-  accent?: "amber" | "bronze" | "olive" | "gold";
+  accent?: "amber" | "bronze" | "gold";
   mockup: ProjectMockupDetail;
 }
 
@@ -97,7 +97,7 @@ export const PROJECTS: Project[] = [
     description:
       "Running event discovery platform created to help runners find races in Iloilo and other locations, with filters for distance, date and time, and location.",
     technologies: ["React", "TypeScript", "Tailwind CSS"],
-    accent: "olive",
+    accent: "amber",
     mockup: {
       headerTag: "NEXRUN // RACE DISCOVERY",
       sublabel: "EVENT INDEXING ENGINE",

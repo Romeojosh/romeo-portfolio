@@ -39,7 +39,7 @@ export const App: React.FC = () => {
         <section
           key={section.id}
           id={section.id}
-          className="min-h-[85vh] flex items-center border-b border-[rgba(246,184,95,0.12)] scroll-mt-24 md:scroll-mt-28 py-20"
+          className="min-h-[85vh] flex items-center border-b border-[rgba(246,184,95,0.12)] scroll-mt-24 md:scroll-mt-28 py-20 bg-[#111214]"
         >
           <div className="portfolio-container w-full">
             <div className="surface-base border border-[rgba(246,184,95,0.16)] p-8 sm:p-12 md:p-16 relative group transition-all duration-300 hover:border-[#E69A3A]/30">
@@ -50,7 +50,7 @@ export const App: React.FC = () => {
                     SECTION {section.number} // PLACEHOLDER
                   </span>
                 </div>
-                <span className="type-micro-label text-[#AFA49A]">
+                <span className="type-micro-label text-[#74787F]">
                   ID: #{section.id}
                 </span>
               </div>

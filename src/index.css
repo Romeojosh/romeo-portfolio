@@ -4,21 +4,22 @@
   /* ==========================================================================
      Design Tokens — Colors
      ========================================================================== */
-  --color-background: #0B0908;
-  --color-surface: #15100D;
-  --color-elevated: #211813;
+  --color-background: #111214;
+  --color-surface: #181A1D;
+  --color-elevated: #22252A;
   --color-amber: #E69A3A;
   --color-gold: #F6B85F;
   --color-bronze: #A86F2C;
-  --color-olive: #8E9A46;
+  --color-lemon: #FFFB3C;
   --color-text-primary: #F3EEE8;
-  --color-text-secondary: #AFA49A;
-  --color-hairline: rgba(246, 184, 95, 0.16);
+  --color-text-secondary: #A6A8AD;
+  --color-text-muted: #74787F;
+  --color-hairline: rgba(255, 255, 255, 0.08);
 
   /* Aliases matching Stitch Reference */
-  --color-obsidian: #0B0908;
+  --color-obsidian: #111214;
   --color-paper: #F3EEE8;
-  --color-warmgray: #AFA49A;
+  --color-warmgray: #A6A8AD;
   --color-amber-accent: #E69A3A;
   --color-amber-glow: #F6B85F;
 
@@ -44,7 +45,6 @@
   --glow-amber: rgba(230, 154, 58, 0.28);
   --glow-gold: rgba(246, 184, 95, 0.22);
   --glow-bronze: rgba(168, 111, 44, 0.24);
-  --glow-olive: rgba(142, 154, 70, 0.18);
 
   /* Hairline Borders */
   --border-hairline: 1px solid var(--color-hairline);
@@ -52,21 +52,22 @@
 }
 
 @theme {
-  --color-background: #0B0908;
-  --color-obsidian: #0B0908;
-  --color-surface: #15100D;
-  --color-elevated: #211813;
+  --color-background: #111214;
+  --color-obsidian: #111214;
+  --color-surface: #181A1D;
+  --color-elevated: #22252A;
   --color-amber: #E69A3A;
   --color-gold: #F6B85F;
   --color-amber-accent: #E69A3A;
   --color-amber-glow: #F6B85F;
   --color-bronze: #A86F2C;
-  --color-olive: #8E9A46;
+  --color-lemon: #FFFB3C;
   --color-text-primary: #F3EEE8;
-  --color-text-secondary: #AFA49A;
+  --color-text-secondary: #A6A8AD;
+  --color-text-muted: #74787F;
   --color-paper: #F3EEE8;
-  --color-warmgray: #AFA49A;
-  --color-hairline: rgba(246, 184, 95, 0.16);
+  --color-warmgray: #A6A8AD;
+  --color-hairline: rgba(255, 255, 255, 0.08);
 
   --font-display: "Space Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-body: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;

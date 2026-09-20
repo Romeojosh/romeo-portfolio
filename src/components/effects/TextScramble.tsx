@@ -12,6 +12,7 @@ export interface TextScrambleProps {
 
 const CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789./[]-_+";
 const FRAME_INTERVAL = 30;
+const HOVER_COOLDOWN = 650;
 
 export const TextScramble: React.FC<TextScrambleProps> = ({
   text,
@@ -24,6 +25,7 @@ export const TextScramble: React.FC<TextScrambleProps> = ({
   const timerRef = useRef<number | null>(null);
   const hasViewed = useRef(false);
   const isHovering = useRef(false);
+  const lastScrambleAt = useRef(0);
   const shouldReduceMotion = useReducedMotion();
 
   const clearTimer = useCallback(() => {
@@ -34,6 +36,9 @@ export const TextScramble: React.FC<TextScrambleProps> = ({
   }, []);
 
   const scramble = useCallback(() => {
+    const now = Date.now();
+    if (now - lastScrambleAt.current < HOVER_COOLDOWN) return;
+    lastScrambleAt.current = now;
     clearTimer();
 
     if (shouldReduceMotion) {

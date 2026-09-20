@@ -98,7 +98,7 @@ export const Skills: React.FC = () => {
         >
           {/* Contextual label */}
           <p className="text-[10px] font-mono tracking-widest text-[#AFA49A]/60 uppercase mb-8 sm:mb-10">
-            <TextScramble text="CURRENT FOCUS // 2026" trigger="view" />
+            <TextScramble text="CURRENT FOCUS // 2026" trigger="both" />
           </p>
 
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10">

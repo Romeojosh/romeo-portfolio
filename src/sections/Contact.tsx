@@ -69,7 +69,7 @@ export const Contact: React.FC = () => {
         >
           <span className="text-[#E69A3A]">[ 05 ]</span>
           <span className="h-px w-8 bg-[#E69A3A]/60" aria-hidden="true" />
-          <TextScramble text="Initiate Connection" trigger="view" className="text-[#74787F]" />
+          <TextScramble text="Initiate Connection" trigger="both" className="text-[#74787F]" />
         </motion.div>
 
         <div className="grid grid-cols-1 items-start gap-14 lg:grid-cols-12 lg:gap-10">

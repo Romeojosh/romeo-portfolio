@@ -49,7 +49,7 @@ export const Hero: React.FC = () => {
             />
             <TextScramble
               text="PORTFOLIO / 2026 • ATHLETE & TECHNOLOGIST"
-              trigger="view"
+              trigger="both"
               className="truncate"
             />
           </motion.div>

@@ -250,6 +250,23 @@ body {
 }
 
 /* ============================================================================
+   Featured Project Scroll Stack
+   ========================================================================== */
+.scroll-stack-item {
+  position: relative;
+  z-index: var(--scroll-stack-index, 1);
+}
+
+@media (min-width: 768px) {
+  .scroll-stack-item {
+    position: sticky;
+    top: var(--scroll-stack-top);
+    transform: scale(var(--scroll-stack-scale));
+    transform-origin: center top;
+  }
+}
+
+/* ============================================================================
    Desktop Custom Cursor
    ========================================================================== */
 .custom-cursor {

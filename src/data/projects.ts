@@ -25,6 +25,16 @@ export interface Project {
   mockup: ProjectMockupDetail;
 }
 
+/** Verified secondary projects kept out of the current featured-work layout. */
+export interface SecondaryProject {
+  id: string;
+  title: string;
+  description: string;
+  category: "APP PROJECT" | "UI/UX PROTOTYPE";
+  liveUrl?: string;
+  figmaUrl?: string;
+}
+
 export const PROJECTS: Project[] = [
   {
     id: "iloprisaa",
@@ -121,3 +131,34 @@ export const PROJECTS: Project[] = [
     },
   },
 ];
+
+export const SECONDARY_PROJECTS: SecondaryProject[] = [
+  {
+    id: "carsada",
+    title: "Carsada",
+    description:
+      "Carsada assists commuters in Iloilo City by helping them find jeepney routes and connections to reach their destination.",
+    category: "APP PROJECT",
+    liveUrl: "https://carsadaapp.vercel.app/",
+  },
+  {
+    id: "tidytime",
+    title: "TidyTime",
+    description:
+      "A student productivity and organization app designed to help students stay organized, productive, and on track.",
+    category: "UI/UX PROTOTYPE",
+    figmaUrl:
+      "https://www.figma.com/design/OfTVrpp5NaxoqzNzjtols5/prototype-for-design-thinking-challenge?node-id=0-1&p=f&t=dxNEwBfbiNL316om-0",
+  },
+  {
+    id: "daily-ui-challenge-1-add-to-cart",
+    title: "Daily UI Challenge #1 — Add to Cart",
+    description:
+      "A UI design created for Daily UI Challenge #1 focused on an Add to Cart interface.",
+    category: "UI/UX PROTOTYPE",
+    figmaUrl:
+      "https://www.figma.com/design/jcppgu5nlYwbR0i8JBFLfm/Daily-UI-Challenge--1-Requiron?node-id=0-1&p=f&t=GZ8DFznAXOGKeoEv-0",
+  },
+];
+
+// Awesome Todos is intentionally not included: the only known repository URL is a placeholder.

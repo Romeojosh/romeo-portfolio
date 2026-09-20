@@ -3,6 +3,7 @@ import { motion, useReducedMotion } from "motion/react";
 import { PROJECTS } from "../data/projects";
 import { ProjectCard } from "../components/ProjectCard";
 import { TextScramble } from "../components/effects/TextScramble";
+import { ScrollStack } from "../components/effects/ScrollStack";
 
 export const Projects: React.FC = () => {
   const shouldReduceMotion = useReducedMotion();
@@ -32,7 +33,7 @@ export const Projects: React.FC = () => {
             <div className="flex items-center gap-3 text-xs font-mono tracking-widest uppercase text-[#E69A3A] mb-3">
               <span>[ 02 ]</span>
               <span className="w-8 h-[1px] bg-[#E69A3A]/40" aria-hidden="true" />
-              <TextScramble text="Engineered Products" trigger="view" className="text-[#A6A8AD]" />
+              <TextScramble text="Engineered Products" trigger="both" className="text-[#A6A8AD]" />
             </div>
 
             {/* Main Section Heading */}
@@ -64,19 +65,20 @@ export const Projects: React.FC = () => {
             const initialX = shouldReduceMotion ? 0 : isReversed ? 20 : -20;
 
             return (
-              <motion.div
-                key={project.id}
-                initial={shouldReduceMotion ? false : { opacity: 0, x: initialX }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: "-60px" }}
-                transition={{ ...transitionBase, delay: shouldReduceMotion ? 0 : 0.1 }}
-              >
-                <ProjectCard
-                  project={project}
-                  index={index}
-                  isReversed={isReversed}
-                />
-              </motion.div>
+              <ScrollStack key={project.id} index={index} top={96 + index * 20}>
+                <motion.div
+                  initial={shouldReduceMotion ? false : { opacity: 0, x: initialX }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, margin: "-60px" }}
+                  transition={{ ...transitionBase, delay: shouldReduceMotion ? 0 : 0.1 }}
+                >
+                  <ProjectCard
+                    project={project}
+                    index={index}
+                    isReversed={isReversed}
+                  />
+                </motion.div>
+              </ScrollStack>
             );
           })}
         </div>

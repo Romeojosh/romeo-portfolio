@@ -1,0 +1,863 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>ROMEO JOSH — Developer • Athlete • Creator</title>
+<!-- Google Fonts: Space Grotesk and Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;family=Space+Grotesk:wght@400;500;600;700;800&amp;family=Space+Mono:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS v3 with Forms and Container Queries -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            obsidian: '#0B0908',
+            surface: '#15100D',
+            elevated: '#211813',
+            amber: {
+              accent: '#E69A3A',
+              glow: '#F6B85F',
+            },
+            athletic: {
+              red: '#C92328',
+              deep: '#75191B',
+            },
+            paper: '#F3EEE8',
+            warmgray: '#AFA49A',
+          },
+          fontFamily: {
+            display: ['"Space Grotesk"', 'sans-serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"Space Mono"', 'monospace'],
+          },
+          borderColor: {
+            hairline: 'rgba(246, 184, 95, 0.16)',
+          }
+        }
+      }
+    }
+  </script>
+<!-- Custom Core Styles -->
+<style data-purpose="base-layout">
+    body {
+      background-color: #0B0908;
+      color: #F3EEE8;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      overflow-x: hidden;
+      selection-background-color: #E69A3A;
+      selection-color: #0B0908;
+    }
+    ::selection {
+      background: #E69A3A;
+      color: #0B0908;
+    }
+  </style>
+<style data-purpose="mask-effects">
+    /* Interactive Dual Portrait Reveal Layer Styling */
+    .portrait-mask-container {
+      position: relative;
+      touch-action: none;
+      user-select: none;
+    }
+    .portrait-reveal-layer {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      will-change: mask-image, -webkit-mask-image;
+      /* Default initial mask centered */
+      -webkit-mask-image: radial-gradient(circle 140px at 50% 50%, black 70%, transparent 100%);
+      mask-image: radial-gradient(circle 140px at 50% 50%, black 70%, transparent 100%);
+      transition: opacity 0.3s ease;
+    }
+    /* Ring glowing cursor tracker inside frame */
+    .cursor-lens-ring {
+      position: absolute;
+      width: 280px;
+      height: 280px;
+      border: 1.5px solid rgba(246, 184, 95, 0.65);
+      border-radius: 9999px;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      box-shadow: 0 0 35px rgba(230, 154, 58, 0.35), inset 0 0 25px rgba(201, 35, 40, 0.2);
+      transition: opacity 0.3s ease;
+      will-change: transform;
+    }
+    /* Grain Overlay */
+    .grain-overlay {
+      background-image: radial-gradient(rgba(246, 184, 95, 0.05) 1px, transparent 0);
+      background-size: 24px 24px;
+    }
+  </style>
+</head>
+<body class="bg-obsidian text-paper antialiased">
+<!-- BEGIN: FloatingNav -->
+<header class="fixed top-5 inset-x-0 z-50 px-4 pointer-events-none" data-purpose="site-navigation-container">
+<nav aria-label="Main Navigation" class="max-w-5xl mx-auto bg-surface/85 backdrop-blur-md border border-hairline rounded-full px-5 py-2.5 flex items-center justify-between pointer-events-auto shadow-2xl transition-all duration-300 hover:border-amber-accent/40">
+<!-- Monogram Logo -->
+<a aria-label="Romeo Josh Home" class="flex items-center gap-2 group" href="#hero">
+<div class="w-8 h-8 rounded-full bg-elevated border border-hairline flex items-center justify-center font-display font-extrabold text-sm tracking-tighter text-paper group-hover:border-amber-accent transition-colors">
+          RJ
+        </div>
+<span class="w-1.5 h-1.5 rounded-full bg-amber-accent animate-pulse"></span>
+</a>
+<!-- Center Navigation Links -->
+<ul class="hidden md:flex items-center gap-7 text-xs font-mono tracking-widest uppercase text-warmgray">
+<li class=""><a class="hover:text-amber-glow transition-colors" href="#about">About</a></li>
+<li class=""><a class="hover:text-amber-glow transition-colors" href="#work">Work</a></li>
+<li class=""><a class="hover:text-amber-glow transition-colors" href="#skills">Skills</a></li>
+<li class=""><a class="hover:text-amber-glow transition-colors" href="#discipline">Discipline</a></li>
+</ul>
+<!-- Contact Pill Button -->
+<div class="flex items-center gap-3">
+<a class="px-4 py-1.5 text-xs font-mono uppercase tracking-wider rounded-full bg-elevated border border-hairline text-paper hover:border-amber-accent hover:text-amber-glow hover:bg-amber-accent/10 transition-all flex items-center gap-1.5" href="#contact">
+<span class="">Let's Talk</span>
+<span class="text-amber-accent text-sm">→</span>
+</a>
+</div>
+</nav>
+</header>
+<!-- END: FloatingNav -->
+<main>
+<!-- BEGIN: HeroSection -->
+<section class="relative min-h-screen pt-28 pb-16 px-6 lg:px-12 flex items-center overflow-hidden grain-overlay" data-purpose="hero-experience" id="hero">
+<!-- Subtle Ambient Backing Radial Glows -->
+<div aria-hidden="true" class="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] bg-amber-accent/5 rounded-full blur-[140px] pointer-events-none"></div>
+<div aria-hidden="true" class="absolute bottom-10 right-10 w-[600px] h-[600px] bg-athletic-deep/20 rounded-full blur-[160px] pointer-events-none"></div>
+<div class="max-w-[1400px] w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center relative z-10">
+<!-- Left Hero Content Column (7 cols) -->
+<div class="lg:col-span-7 flex flex-col justify-center space-y-7" data-purpose="hero-editorial-copy">
+<!-- Tracking Pill / Status -->
+<div class="inline-flex items-center gap-3 self-start px-3.5 py-1.5 rounded-full bg-surface border border-hairline text-warmgray text-[11px] font-mono tracking-widest uppercase">
+<span class="w-2 h-2 rounded-full bg-amber-accent shadow-[0_0_8px_#E69A3A]"></span>
+<span class="">PORTFOLIO / 2026 • ATHLETE &amp; TECHNOLOGIST</span>
+</div>
+<!-- Oversized Headline -->
+<div>
+<h1 class="text-7xl sm:text-8xl lg:text-[7.25rem] font-extrabold font-display uppercase tracking-tight text-paper leading-[0.88] m-0">
+              ROMEO<br>
+<span class="text-amber-accent tracking-tight">JOSH</span>
+</h1>
+<p class="text-xs sm:text-sm font-mono tracking-[0.25em] text-warmgray uppercase mt-4">
+              Developer • Athlete • Creator
+            </p>
+</div>
+<!-- Editorial Mission Statement -->
+<p class="text-base sm:text-lg text-warmgray font-light max-w-xl leading-relaxed">
+            I build digital experiences where design, technology, and performance meet. Engineering high-resilience web architectures shaped by endurance athletics and precise design execution.
+          </p>
+<!-- Dual Action Buttons -->
+<div class="flex flex-wrap items-center gap-4 pt-2">
+<a class="px-7 py-3.5 rounded-full bg-amber-accent hover:bg-amber-glow text-obsidian font-display font-bold text-sm tracking-wide transition-all shadow-[0_0_25px_rgba(230,154,58,0.25)] hover:shadow-[0_0_35px_rgba(246,184,95,0.4)] flex items-center gap-2" href="#work">
+<span class="">View Projects</span>
+<span class="">↓</span>
+</a>
+<a class="px-7 py-3.5 rounded-full border border-hairline hover:border-amber-accent/60 hover:bg-amber-accent/5 text-paper font-display text-sm tracking-wide transition-all" href="#about">
+              About Me
+            </a>
+</div>
+<!-- Coordinates Stamp & Technical Telemetry -->
+<div class="pt-6 border-t border-hairline/60 flex flex-wrap items-center gap-6 text-[11px] font-mono text-warmgray/80 tracking-widest uppercase">
+<div class="flex items-center gap-2">
+<span class="text-amber-accent">GEO</span>
+<span class="">10.7202° N, 122.5621° E · ILOILO, PH</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-athletic-red">PULSE</span>
+<span class="">RECORD // 00:00:26</span>
+</div>
+</div>
+</div>
+<!-- Right Hero Interactive Portrait Reveal (5 cols) -->
+<div class="lg:col-span-5 flex justify-center lg:justify-end" data-purpose="hero-dual-portrait">
+<div class="relative w-full max-w-[440px]">
+<!-- Top technical corner tags -->
+<div class="absolute -top-3 left-4 text-[10px] font-mono text-warmgray/60 tracking-widest uppercase z-20">
+              [ FIG. 01 — DUAL IDENTITY ]
+            </div>
+<!-- Portrait Interactive Frame Container -->
+<div class="portrait-mask-container aspect-[4/5] w-full rounded-2xl overflow-hidden border border-hairline bg-surface shadow-2xl relative cursor-crosshair" id="portrait-stage">
+<!-- Layer 1: Developer Base (Black T-Shirt) -->
+<img alt="Romeo Josh — Technologist &amp; Developer Portrait" class="w-full h-full object-cover object-top block select-none" loading="eager" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0h2DveAYg7Bw-uHIU1l9flvq61z8amass6v9O3w305niTIOunGTBqM0-EaLH4e21Gv0foYbrARD4a1leypLSi6DXhGzWd9r88Tq5zrMHwo-CiFS-USPrM_2dsO_deBudR3kwp2DbzsPR9fc54dwQg8uGcjHzOLx_nsJJKaHEz6Yh-GxoF9nJd9ooud68pCX-y2t-jL5DrTmW6EsiwVyUb79NUpYWo6AHxUizeuf7UMhpYFTEkwAavkmzUnzR6iylQCz8">
+<!-- Layer 2: Athlete Reveal (WIT Red Jersey) -->
+<div class="portrait-reveal-layer select-none" id="athlete-reveal-layer" style="mask-image: radial-gradient(140px at 220px 275px, black 70%, transparent 100%);">
+<img alt="Romeo Josh — Western Institute of Technology Athlete Portrait" class="w-full h-full object-cover object-top block select-none" loading="eager" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKgRaee8NRJd3jH4OynMgiA1qoyVHY361HZK5UNaiyRzfLdwkk_s7SdKYp32P7jUlWdVrfWioltMhxUi4yzF4a99zdpfPjMb6je-JahCfObDvl3rOOaJReb7Y6P2-2ILHL2AdYmUF77QueaTMUuo1sLtC9_t2HYLXH1B5n_k5u0joV0faBThIvF5QRU-45oIHq7opAiAon7j3DEnMSoyP7Vn2ERjLLWUcjaGZznHl3-5c4ca0D_lKIvlwOlrQXiR6cGcY">
+</div>
+<!-- Animated Cursor Ring Indicator -->
+<div aria-hidden="true" class="cursor-lens-ring opacity-0 sm:opacity-100" id="lens-indicator" style="left: 220px; top: 275px; opacity: 1;"></div>
+<!-- Interactive Hint Indicator Pill -->
+<div class="absolute bottom-4 left-1/2 -translate-x-1/2 px-4 py-1.5 rounded-full bg-obsidian/85 backdrop-blur-md border border-hairline flex items-center gap-2 pointer-events-none z-30">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-accent animate-ping"></span>
+<span class="text-[10px] font-mono uppercase tracking-widest text-paper">Move to Reveal ⤢</span>
+</div>
+<!-- Thin Corner Grid Marks -->
+<div class="absolute top-2 left-2 w-2.5 h-2.5 border-t border-l border-amber-accent/50 pointer-events-none"></div>
+<div class="absolute top-2 right-2 w-2.5 h-2.5 border-t border-r border-amber-accent/50 pointer-events-none"></div>
+<div class="absolute bottom-2 left-2 w-2.5 h-2.5 border-b border-l border-amber-accent/50 pointer-events-none"></div>
+<div class="absolute bottom-2 right-2 w-2.5 h-2.5 border-b border-r border-amber-accent/50 pointer-events-none"></div>
+</div>
+<!-- Subtitle caption -->
+<div class="flex items-center justify-between text-[11px] font-mono text-warmgray/70 tracking-widest uppercase mt-3 px-1">
+<span class="">TECH LAYER // DEFAULT</span>
+<span class="text-athletic-red">WIT VARSITY // LENS</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: HeroSection -->
+<!-- BEGIN: Section01About -->
+<section class="py-28 px-6 lg:px-12 border-t border-hairline relative" data-purpose="about-editorial" id="about">
+<div class="max-w-[1400px] mx-auto">
+<!-- Section Header Index -->
+<div class="flex items-center gap-3 text-xs font-mono tracking-widest uppercase text-amber-accent mb-6">
+<span class="">[ 01 ]</span>
+<span class="w-8 h-[1px] bg-amber-accent/40"></span>
+<span class="text-warmgray">Origin &amp; Philosophy</span>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+<!-- Left Large Title -->
+<div class="lg:col-span-5">
+<h2 class="text-4xl sm:text-6xl font-extrabold font-display uppercase tracking-tight leading-[0.95] text-paper sticky top-28">
+              MORE THAN<br>
+<span class="text-amber-accent">ONE DISCIPLINE.</span>
+</h2>
+<div class="hidden lg:block mt-12 p-6 rounded-2xl bg-surface border border-hairline">
+<span class="text-xs font-mono tracking-widest text-warmgray uppercase block mb-3">Athletic Motto</span>
+<p class="text-sm font-sans text-paper italic">"Distance teaches you what comfort hides. The marathon and the compiler both demand complete honesty."</p>
+</div>
+</div>
+<!-- Right Narrative & High Contrast Metadata Grid -->
+<div class="lg:col-span-7 space-y-8">
+<p class="text-lg sm:text-xl text-paper font-normal leading-relaxed">
+              I operate across the convergence of engineering rigor, interface craftsmanship, and varsity athletic stamina. My work is not merely about writing syntactically correct code, but about structuring robust digital instruments that perform without friction under high operational load.
+            </p>
+<p class="text-base text-warmgray leading-relaxed">
+              As a student athlete representing the Western Institute of Technology (WIT) track and field program, the relentless demands of interval training, pacing splits, and physical endurance translate directly to how I solve algorithmic bottlenecks and architect responsive frontend systems.
+            </p>
+<!-- Metadata Specs Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6 border-t border-hairline">
+<div class="p-5 rounded-xl bg-surface border border-hairline">
+<span class="text-[10px] font-mono tracking-widest uppercase text-warmgray block mb-1">BASED IN</span>
+<p class="text-sm font-display font-semibold text-paper">Iloilo, Philippines</p>
+<span class="text-[11px] font-mono text-amber-accent/80 block mt-1">Western Visayas</span>
+</div>
+<div class="p-5 rounded-xl bg-surface border border-hairline">
+<span class="text-[10px] font-mono tracking-widest uppercase text-warmgray block mb-1">CORE FOCUS</span>
+<p class="text-sm font-display font-semibold text-paper">Web Systems</p>
+<span class="text-[11px] font-mono text-amber-accent/80 block mt-1">UI/UX &amp; Interactive 3D</span>
+</div>
+<div class="p-5 rounded-xl bg-surface border border-hairline">
+<span class="text-[10px] font-mono tracking-widest uppercase text-warmgray block mb-1">DISCIPLINE</span>
+<p class="text-sm font-display font-semibold text-paper">Distance Track &amp; Code</p>
+<span class="text-[11px] font-mono text-athletic-red block mt-1">WIT Varsity Runner</span>
+</div>
+</div>
+<!-- Technical Quotes / Highlight -->
+<div class="p-6 rounded-2xl bg-gradient-to-r from-elevated to-surface border-l-2 border-l-amber-accent border-hairline">
+<div class="text-xs font-mono tracking-widest uppercase text-warmgray mb-2">ARCHITECTURAL STANDARD</div>
+<p class="text-sm text-paper">
+                Zero bloated abstractions. Micro-optimized render loops. Fluid typography and accessible, semantic DOM trees engineered for endurance.
+              </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: Section01About -->
+<!-- BEGIN: Section02Work -->
+<section class="py-28 px-6 lg:px-12 border-t border-hairline bg-surface/30 relative" data-purpose="portfolio-work-case-studies" id="work">
+<div class="max-w-[1400px] mx-auto">
+<!-- Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
+<div>
+<div class="flex items-center gap-3 text-xs font-mono tracking-widest uppercase text-amber-accent mb-3">
+<span class="">[ 02 ]</span>
+<span class="w-8 h-[1px] bg-amber-accent/40"></span>
+<span class="text-warmgray">Engineered Products</span>
+</div>
+<h2 class="text-4xl sm:text-6xl font-extrabold font-display uppercase tracking-tight text-paper">
+              SELECTED WORK.
+            </h2>
+</div>
+<div class="text-xs font-mono tracking-widest uppercase text-warmgray">
+            PRODUCTION DEPLOYMENTS // 2025 — 2026
+          </div>
+</div>
+<!-- Case Study 01: ILOPRISAA -->
+<article class="mb-16 p-8 lg:p-12 rounded-3xl bg-surface border border-hairline hover:border-amber-accent/40 transition-all duration-300 group" data-purpose="project-card">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+<div class="lg:col-span-6 space-y-6">
+<div class="flex items-center gap-3">
+<span class="px-3 py-1 rounded-full text-[10px] font-mono uppercase tracking-widest bg-athletic-deep/50 text-athletic-red border border-athletic-red/30">
+                  ATHLETIC ACCREDITATION SYSTEM
+                </span>
+<span class="text-xs font-mono text-warmgray tracking-widest">2025</span>
+</div>
+<h3 class="text-3xl sm:text-4xl font-extrabold font-display uppercase text-paper group-hover:text-amber-accent transition-colors">
+                ILOPRISAA
+              </h3>
+<p class="text-sm sm:text-base text-warmgray leading-relaxed">
+                Digital Document Management &amp; Athlete Accreditation System designed for the Iloilo Private Schools Athletic Association. Replaced paper-bound verification bottlenecks with encrypted PDF generation, tamper-proof ID verification, and unified athletic record validation.
+              </p>
+<!-- Technical Tags -->
+<div class="flex flex-wrap gap-2 pt-2">
+<span class="px-3 py-1 rounded-md bg-elevated border border-hairline text-xs font-mono text-paper">React</span>
+<span class="px-3 py-1 rounded-md bg-elevated border border-hairline text-xs font-mono text-paper">TypeScript</span>
+<span class="px-3 py-1 rounded-md bg-elevated border border-hairline text-xs font-mono text-paper">Supabase</span>
+<span class="px-3 py-1 rounded-md bg-elevated border border-hairline text-xs font-mono text-paper">PDF Generation</span>
+<span class="px-3 py-1 rounded-md bg-elevated border border-hairline text-xs font-mono text-paper">Tailwind</span>
+</div>
+<div class="pt-4">
+<span class="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-amber-accent group-hover:translate-x-1 transition-transform">
+                  EXPLORE ARCHITECTURE &amp; IMPACT ↗
+                </span>
+</div>
+</div>
+<!-- Conceptual Visual Mockup Container -->
+<div class="lg:col-span-6">
+<div class="relative rounded-2xl overflow-hidden border border-hairline bg-elevated aspect-[16/10] p-6 flex flex-col justify-between group-hover:border-amber-accent/30 transition-all">
+<div class="flex items-center justify-between border-b border-hairline/60 pb-3">
+<span class="text-[11px] font-mono tracking-widest text-amber-accent uppercase">ILOPRISAA // SYSTEM DASHBOARD</span>
+<span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+</div>
+<!-- Abstract Data Blueprint Visual -->
+<div class="space-y-3 py-4">
+<div class="flex items-center justify-between text-xs font-mono text-warmgray">
+<span class="">SECURE ATHLETE ACCREDITATION LEDGER</span>
+<span class="text-paper">99.8% VERIFIED</span>
+</div>
+<div class="w-full bg-obsidian rounded-full h-2 overflow-hidden">
+<div class="bg-gradient-to-r from-athletic-red to-amber-accent h-full w-[94%]"></div>
+</div>
+<div class="grid grid-cols-3 gap-2 pt-2">
+<div class="bg-obsidian/70 p-3 rounded-lg border border-hairline text-center">
+<div class="text-[10px] font-mono text-warmgray">ATHLETES</div>
+<div class="text-base font-bold font-display text-paper">1,420+</div>
+</div>
+<div class="bg-obsidian/70 p-3 rounded-lg border border-hairline text-center">
+<div class="text-[10px] font-mono text-warmgray">DOCUMENTS</div>
+<div class="text-base font-bold font-display text-paper">5,800+</div>
+</div>
+<div class="bg-obsidian/70 p-3 rounded-lg border border-hairline text-center">
+<div class="text-[10px] font-mono text-warmgray">LATENCY</div>
+<div class="text-base font-bold font-display text-amber-accent">48ms</div>
+</div>
+</div>
+</div>
+<div class="text-[10px] font-mono text-warmgray/50 tracking-widest uppercase">
+                  SHA-256 INTEGRITY CHECK PASSED • ENCRYPTED STORAGE
+                </div>
+</div>
+</div>
+</div>
+</article>
+<!-- Case Study 02: SchedMate -->
+<article class="mb-16 p-8 lg:p-12 rounded-3xl bg-surface border border-hairline hover:border-amber-accent/40 transition-all duration-300 group" data-purpose="project-card">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+<div class="lg:col-span-6 order-2 lg:order-1">
+<div class="relative rounded-2xl overflow-hidden border border-hairline bg-elevated aspect-[16/10] p-6 flex flex-col justify-between group-hover:border-amber-accent/30 transition-all">
+<div class="flex items-center justify-between border-b border-hairline/60 pb-3">
+<span class="text-[11px] font-mono tracking-widest text-amber-accent uppercase">SCHEDMATE // CONFLICT RESOLUTION MATRIX</span>
+<span class="text-xs font-mono text-warmgray">ROOM_CAP: 100%</span>
+</div>
+<div class="space-y-2.5 py-4">
+<div class="p-3 bg-obsidian/80 rounded-lg border border-hairline flex items-center justify-between text-xs font-mono">
+<span class="text-warmgray">ENG-LAB-302</span>
+<span class="text-amber-glow font-bold">OPTIMIZED (0 CONFLICTS)</span>
+</div>
+<div class="p-3 bg-obsidian/80 rounded-lg border border-hairline flex items-center justify-between text-xs font-mono">
+<span class="text-warmgray">CS-ALGO-SECTION-A</span>
+<span class="text-paper">SLOT ALLOCATED: MON/WED 08:30</span>
+</div>
+<div class="p-3 bg-obsidian/80 rounded-lg border border-hairline flex items-center justify-between text-xs font-mono">
+<span class="text-warmgray">FACULTY AVAILABILITY MATCH</span>
+<span class="text-emerald-400">INDEX: 0.98</span>
+</div>
+</div>
+<div class="text-[10px] font-mono text-warmgray/50 tracking-widest uppercase">
+                  HEURISTIC GRAPH ALLOCATION ENGINE • POSTGRES BACKED
+                </div>
+</div>
+</div>
+<div class="lg:col-span-6 space-y-6 order-1 lg:order-2">
+<div class="flex items-center gap-3">
+<span class="px-3 py-1 rounded-full text-[10px] font-mono uppercase tracking-widest bg-amber-accent/15 text-amber-glow border border-amber-accent/30">
+                  INTELLIGENT RESOURCE SCHEDULER
+                </span>
+<span class="text-xs font-mono text-warmgray tracking-widest">2025</span>
+</div>
+<h3 class="text-3xl sm:text-4xl font-extrabold font-display uppercase text-paper group-hover:text-amber-accent transition-colors">
+                SchedMate
+              </h3>
+<p class="text-sm sm:text-base text-warmgray leading-relaxed">
+                Smart Timetable &amp; Laboratory Allocation Engine that automates complex scheduling scenarios across university departments. Eliminates room clash hazards through recursive constraint satisfaction heuristics and atomic calendar synchronization.
+              </p>
+<div class="flex flex-wrap gap-2 pt-2">
+<span class="px-3 py-1 rounded-md bg-elevated border border-hairline text-xs font-mono text-paper">Next.js</span>
+<span class="px-3 py-1 rounded-md bg-elevated border border-hairline text-xs font-mono text-paper">PostgreSQL</span>
+<span class="px-3 py-1 rounded-md bg-elevated border border-hairline text-xs font-mono text-paper">Prisma ORM</span>
+<span class="px-3 py-1 rounded-md bg-elevated border border-hairline text-xs font-mono text-paper">Tailwind</span>
+<span class="px-3 py-1 rounded-md bg-elevated border border-hairline text-xs font-mono text-paper">Algorithms</span>
+</div>
+<div class="pt-4">
+<span class="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-amber-accent group-hover:translate-x-1 transition-transform">
+                  REVIEW OPTIMIZATION PIPELINE ↗
+                </span>
+</div>
+</div>
+</div>
+</article>
+<!-- Case Study 03: Nexrun -->
+<article class="p-8 lg:p-12 rounded-3xl bg-surface border border-hairline hover:border-amber-accent/40 transition-all duration-300 group" data-purpose="project-card">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+<div class="lg:col-span-6 space-y-6">
+<div class="flex items-center gap-3">
+<span class="px-3 py-1 rounded-full text-[10px] font-mono uppercase tracking-widest bg-athletic-red/20 text-paper border border-athletic-red/40">
+                  ENDURANCE TELEMETRY PLATFORM
+                </span>
+<span class="text-xs font-mono text-warmgray tracking-widest">2026</span>
+</div>
+<h3 class="text-3xl sm:text-4xl font-extrabold font-display uppercase text-paper group-hover:text-amber-accent transition-colors">
+                Nexrun
+              </h3>
+<p class="text-sm sm:text-base text-warmgray leading-relaxed">
+                Running Event Discovery &amp; Pace Architecture platform built for competitive runners and marathon communities. Features GPX trace visualizers, elevation gradient mapping, pacing calculators, and localized race event discovery across the Philippine archipelago.
+              </p>
+<div class="flex flex-wrap gap-2 pt-2">
+<span class="px-3 py-1 rounded-md bg-elevated border border-hairline text-xs font-mono text-paper">React</span>
+<span class="px-3 py-1 rounded-md bg-elevated border border-hairline text-xs font-mono text-paper">Mapbox GL</span>
+<span class="px-3 py-1 rounded-md bg-elevated border border-hairline text-xs font-mono text-paper">GPX Parser</span>
+<span class="px-3 py-1 rounded-md bg-elevated border border-hairline text-xs font-mono text-paper">Geolocation</span>
+<span class="px-3 py-1 rounded-md bg-elevated border border-hairline text-xs font-mono text-paper">Tailwind</span>
+</div>
+<div class="pt-4">
+<span class="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-amber-accent group-hover:translate-x-1 transition-transform">
+                  LAUNCH RUNNER DASHBOARD ↗
+                </span>
+</div>
+</div>
+<!-- Conceptual Visual Mockup Container -->
+<div class="lg:col-span-6">
+<div class="relative rounded-2xl overflow-hidden border border-hairline bg-elevated aspect-[16/10] p-6 flex flex-col justify-between group-hover:border-amber-accent/30 transition-all">
+<div class="flex items-center justify-between border-b border-hairline/60 pb-3">
+<span class="text-[11px] font-mono tracking-widest text-amber-accent uppercase">NEXRUN // 21K HALF ELEVATION PROFILE</span>
+<span class="text-xs font-mono text-athletic-red font-bold">PACE: 4'12"/KM</span>
+</div>
+<!-- Wave Elevation Graphic -->
+<div class="py-6 flex items-end gap-1.5 h-28 px-2">
+<div class="w-full bg-surface h-10 rounded-t border-t border-hairline"></div>
+<div class="w-full bg-surface h-14 rounded-t border-t border-hairline"></div>
+<div class="w-full bg-amber-accent/30 h-20 rounded-t border-t border-amber-accent"></div>
+<div class="w-full bg-athletic-red/40 h-24 rounded-t border-t border-athletic-red"></div>
+<div class="w-full bg-athletic-red/60 h-28 rounded-t border-t border-athletic-red"></div>
+<div class="w-full bg-amber-accent/40 h-16 rounded-t border-t border-amber-accent"></div>
+<div class="w-full bg-surface h-12 rounded-t border-t border-hairline"></div>
+<div class="w-full bg-surface h-8 rounded-t border-t border-hairline"></div>
+</div>
+<div class="flex justify-between items-center text-[10px] font-mono text-warmgray/70 tracking-widest uppercase">
+<span class="">START: 0.00 KM</span>
+<span class="text-amber-glow">PEAK INCLINE: +142M</span>
+<span class="">FINISH: 21.0975 KM</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+</div>
+</section>
+<!-- END: Section02Work -->
+<!-- BEGIN: Section03CapabilitiesAndStats -->
+<section class="py-28 px-6 lg:px-12 border-t border-hairline relative" data-purpose="capabilities-and-metrics" id="skills">
+<div class="max-w-[1400px] mx-auto">
+<!-- Header -->
+<div class="flex items-center gap-3 text-xs font-mono tracking-widest uppercase text-amber-accent mb-6">
+<span class="">[ 03 ]</span>
+<span class="w-8 h-[1px] bg-amber-accent/40"></span>
+<span class="text-warmgray">Tech Stack &amp; Metrics</span>
+</div>
+<h2 class="text-4xl sm:text-6xl font-extrabold font-display uppercase tracking-tight text-paper mb-16">
+          WHAT I WORK WITH.
+        </h2>
+<!-- 4 Clean Capability Columns -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 pb-20 border-b border-hairline">
+<div class="space-y-4">
+<div class="text-xs font-mono tracking-widest text-amber-accent uppercase pb-2 border-b border-hairline/60">
+              01 // FRONTEND
+            </div>
+<ul class="space-y-2.5 text-sm font-sans text-paper">
+<li class="flex items-center gap-2.5">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-accent"></span>
+<span class="">React.js &amp; Next.js</span>
+</li>
+<li class="flex items-center gap-2.5">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-accent"></span>
+<span class="">TypeScript</span>
+</li>
+<li class="flex items-center gap-2.5">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-accent"></span>
+<span class="">Tailwind CSS</span>
+</li>
+<li class="flex items-center gap-2.5">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-accent"></span>
+<span class="">HTML5 / WebGL / Canvas</span>
+</li>
+<li class="flex items-center gap-2.5">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-accent"></span>
+<span class="">Framer Motion &amp; Micro-Interactions</span>
+</li>
+</ul>
+</div>
+<div class="space-y-4">
+<div class="text-xs font-mono tracking-widest text-amber-accent uppercase pb-2 border-b border-hairline/60">
+              02 // BACKEND
+            </div>
+<ul class="space-y-2.5 text-sm font-sans text-paper">
+<li class="flex items-center gap-2.5">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-accent"></span>
+<span class="">Node.js Runtime</span>
+</li>
+<li class="flex items-center gap-2.5">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-accent"></span>
+<span class="">RESTful Architecture</span>
+</li>
+<li class="flex items-center gap-2.5">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-accent"></span>
+<span class="">Supabase &amp; BaaS</span>
+</li>
+<li class="flex items-center gap-2.5">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-accent"></span>
+<span class="">PostgreSQL</span>
+</li>
+<li class="flex items-center gap-2.5">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-accent"></span>
+<span class="">Authentication &amp; RBAC</span>
+</li>
+</ul>
+</div>
+<div class="space-y-4">
+<div class="text-xs font-mono tracking-widest text-amber-accent uppercase pb-2 border-b border-hairline/60">
+              03 // DATA &amp; ARCHITECTURE
+            </div>
+<ul class="space-y-2.5 text-sm font-sans text-paper">
+<li class="flex items-center gap-2.5">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-accent"></span>
+<span class="">Prisma ORM</span>
+</li>
+<li class="flex items-center gap-2.5">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-accent"></span>
+<span class="">Relational Schema Modeling</span>
+</li>
+<li class="flex items-center gap-2.5">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-accent"></span>
+<span class="">Runtime Type Validation (Zod)</span>
+</li>
+<li class="flex items-center gap-2.5">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-accent"></span>
+<span class="">State Stores (Zustand)</span>
+</li>
+<li class="flex items-center gap-2.5">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-accent"></span>
+<span class="">Caching &amp; Optimistic UI</span>
+</li>
+</ul>
+</div>
+<div class="space-y-4">
+<div class="text-xs font-mono tracking-widest text-amber-accent uppercase pb-2 border-b border-hairline/60">
+              04 // WORKFLOW &amp; TOOLS
+            </div>
+<ul class="space-y-2.5 text-sm font-sans text-paper">
+<li class="flex items-center gap-2.5">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-accent"></span>
+<span class="">Figma UI / Design Tokens</span>
+</li>
+<li class="flex items-center gap-2.5">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-accent"></span>
+<span class="">Git &amp; GitHub Workflows</span>
+</li>
+<li class="flex items-center gap-2.5">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-accent"></span>
+<span class="">Vercel Edge Deployments</span>
+</li>
+<li class="flex items-center gap-2.5">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-accent"></span>
+<span class="">VS Code Power Tooling</span>
+</li>
+<li class="flex items-center gap-2.5">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-accent"></span>
+<span class="">Continuous Integration (CI/CD)</span>
+</li>
+</ul>
+</div>
+</div>
+<!-- Monumental Metric Counters -->
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-8 pt-16" data-purpose="telemetry-stats">
+<div class="border-l border-hairline pl-6">
+<div class="text-5xl sm:text-7xl font-extrabold font-display text-paper leading-none tracking-tight">
+              04<span class="text-amber-accent">+</span>
+</div>
+<div class="text-xs font-mono uppercase tracking-wider text-warmgray mt-3">
+              Selected Production Systems
+            </div>
+</div>
+<div class="border-l border-hairline pl-6">
+<div class="text-5xl sm:text-7xl font-extrabold font-display text-paper leading-none tracking-tight">
+              10<span class="text-amber-accent">+</span>
+</div>
+<div class="text-xs font-mono uppercase tracking-wider text-warmgray mt-3">
+              Core Modern Technologies
+            </div>
+</div>
+<div class="border-l border-hairline pl-6">
+<div class="text-5xl sm:text-7xl font-extrabold font-display text-amber-accent leading-none tracking-tight">
+              100<span class="text-paper">%</span>
+</div>
+<div class="text-xs font-mono uppercase tracking-wider text-warmgray mt-3">
+              Curiosity &amp; Interface Craft
+            </div>
+</div>
+<div class="border-l border-hairline pl-6">
+<div class="text-5xl sm:text-7xl font-extrabold font-display text-athletic-red leading-none tracking-tight">
+              ∞
+            </div>
+<div class="text-xs font-mono uppercase tracking-wider text-warmgray mt-3">
+              Relentless Learning &amp; Mileage
+            </div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: Section03CapabilitiesAndStats -->
+<!-- BEGIN: Section04Discipline -->
+<section class="py-28 px-6 lg:px-12 border-t border-hairline bg-gradient-to-br from-[#1b0809] via-obsidian to-surface relative overflow-hidden" data-purpose="athletic-campaign-section" id="discipline">
+<!-- Dark Red Atmospheric Ambient Light -->
+<div aria-hidden="true" class="absolute -right-40 top-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-athletic-deep/30 rounded-full blur-[180px] pointer-events-none"></div>
+<div class="max-w-[1400px] mx-auto relative z-10">
+<!-- Header -->
+<div class="flex items-center gap-3 text-xs font-mono tracking-widest uppercase text-athletic-red mb-6">
+<span class="">[ 04 ]</span>
+<span class="w-8 h-[1px] bg-athletic-red/40"></span>
+<span class="text-warmgray">Endurance &amp; Athletics</span>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<!-- Editorial Column (7 cols) -->
+<div class="lg:col-span-7 space-y-8">
+<h2 class="text-5xl sm:text-7xl font-extrabold font-display uppercase tracking-tight text-paper leading-[0.92]">
+              CODE. RUN.<br>
+<span class="text-athletic-red">REPEAT.</span>
+</h2>
+<p class="text-lg sm:text-xl text-warmgray font-light max-w-2xl leading-relaxed">
+              Long-distance running is not an extracurricular distraction; it is the mental operating system that drives my code architecture.
+            </p>
+<p class="text-sm sm:text-base text-warmgray/90 leading-relaxed max-w-xl">
+              When you spend kilometers in the sun balancing pace, cadence, and fatigue threshold, you cultivate a deep tolerance for difficult debugging sessions, long product cycles, and complex architectural refactors. You don't quit when it hurts; you calibrate and finish.
+            </p>
+<!-- Athletic Telemetry Specs -->
+<div class="space-y-4 pt-4 max-w-xl">
+<div class="p-4 rounded-xl bg-obsidian/70 border border-hairline flex items-center justify-between">
+<div>
+<div class="text-[10px] font-mono tracking-widest uppercase text-warmgray">WEEKLY CADENCE</div>
+<div class="text-sm font-bold font-display text-paper">42+ KM PACE &amp; RECOVERY RUNS</div>
+</div>
+<div class="text-right font-mono text-xs text-amber-accent">SUB-TEMPO</div>
+</div>
+<div class="p-4 rounded-xl bg-obsidian/70 border border-hairline flex items-center justify-between">
+<div>
+<div class="text-[10px] font-mono tracking-widest uppercase text-warmgray">ATHLETIC AFFILIATION</div>
+<div class="text-sm font-bold font-display text-paper">WIT VARSITY TRACK &amp; FIELD</div>
+</div>
+<div class="text-right font-mono text-xs text-athletic-red font-bold">ILOILO</div>
+</div>
+<div class="p-4 rounded-xl bg-obsidian/70 border border-hairline flex items-center justify-between">
+<div>
+<div class="text-[10px] font-mono tracking-widest uppercase text-warmgray">TRAINING PHILOSOPHY</div>
+<div class="text-sm font-bold font-display text-paper">ENDURANCE TRANSLATES DIRECTLY TO RESILIENCE</div>
+</div>
+<div class="text-right font-mono text-xs text-warmgray">DISCIPLINE</div>
+</div>
+</div>
+</div>
+<!-- Athletic Jersey Showcase Card (5 cols) -->
+<div class="lg:col-span-5 flex justify-center">
+<div class="relative w-full max-w-[420px] rounded-2xl overflow-hidden border border-athletic-red/30 shadow-[0_0_50px_rgba(117,25,27,0.3)] group">
+<!-- Romeo in WIT Jersey image -->
+<img alt="Romeo Josh — Western Institute of Technology Athlete Portrait" class="w-full aspect-[4/5] object-cover object-top filter contrast-[1.05] group-hover:scale-105 transition-transform duration-700" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8rS1X1iWMuDulMkxX8OdfHrDQpPh5T0fzopR4jxns7nDUBOwqqJG6SWw3y-Uygz_DkZXVjLUgpvxdZoSWbcj_98WXnXrviLeMPLWCUDLq08vTFV_V2oF8xdqOM4KvnKUvT9eLgxJR7OYv4Dp0drUVnIIy3y7mfbc8zxBk6epy9WxdqevTPiyc5BDXEqyu5gsSfKz2epzi01D6Y6wznNSw_sgszVGObRcPmakgudMf_dS2uzPhv78l-EMsZzAuDsy1s1s">
+<!-- Gradient Vignette -->
+<div class="absolute inset-0 bg-gradient-to-t from-obsidian via-transparent to-transparent opacity-80 pointer-events-none"></div>
+<!-- Overlay Card Metadata -->
+<div class="absolute bottom-6 inset-x-6 z-20">
+<div class="inline-block px-3 py-1 rounded-full bg-athletic-red text-paper text-[10px] font-mono uppercase tracking-widest mb-2 font-bold shadow-md">
+                  WESTERN INSTITUTE OF TECHNOLOGY
+                </div>
+
+<div class="text-[11px] font-mono text-warmgray tracking-widest uppercase mt-1">
+                  TRACK &amp; FIELD // DISTANCE
+                </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: Section04Discipline -->
+<!-- BEGIN: Section05Contact -->
+<section class="py-32 px-6 lg:px-12 border-t border-hairline bg-obsidian relative overflow-hidden" data-purpose="closing-contact" id="contact">
+<!-- Radiating warm golden rim light at bottom -->
+<div aria-hidden="true" class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[900px] h-[350px] bg-amber-accent/15 rounded-t-full blur-[140px] pointer-events-none"></div>
+<div class="max-w-[1200px] mx-auto text-center relative z-10">
+<!-- Header tag -->
+<div class="inline-flex items-center gap-3 text-xs font-mono tracking-widest uppercase text-amber-accent mb-6">
+<span class="">[ 05 ]</span>
+<span class="w-8 h-[1px] bg-amber-accent/40"></span>
+<span class="text-warmgray">Initiate Connection</span>
+</div>
+<h2 class="text-5xl sm:text-7xl lg:text-8xl font-extrabold font-display uppercase tracking-tight text-paper mb-8 leading-[0.9]">
+          LET'S BUILD<br>
+<span class="text-amber-accent">SOMETHING.</span>
+</h2>
+<p class="text-base sm:text-xl text-warmgray max-w-2xl mx-auto mb-12 font-light leading-relaxed">
+          Open to technical engineering collaborations, modern web product development, and ambitious creative technology projects.
+        </p>
+<!-- Monumental CTA Button -->
+<div class="flex justify-center mb-16">
+<a class="group px-10 py-5 rounded-full bg-amber-accent hover:bg-amber-glow text-obsidian font-display font-bold text-base sm:text-lg uppercase tracking-wider transition-all duration-300 shadow-[0_0_35px_rgba(230,154,58,0.3)] hover:shadow-[0_0_50px_rgba(246,184,95,0.55)] flex items-center gap-3 hover:gap-5" href="mailto:hello@romeojosh.dev">
+<span class="">Start a Conversation</span>
+<span class="text-xl transition-transform group-hover:translate-x-1">→</span>
+</a>
+</div>
+<!-- Social Channels & Direct Touchpoints -->
+<div class="flex flex-wrap justify-center items-center gap-6 sm:gap-10 text-xs font-mono uppercase tracking-widest text-warmgray">
+<a class="hover:text-amber-glow transition-colors" href="https://github.com" rel="noopener noreferrer" target="_blank">
+            GITHUB ↗
+          </a>
+<span class="text-hairline">•</span>
+<a class="hover:text-amber-glow transition-colors" href="https://linkedin.com" rel="noopener noreferrer" target="_blank">
+            LINKEDIN ↗
+          </a>
+<span class="text-hairline">•</span>
+<a class="hover:text-amber-glow transition-colors" href="mailto:contact@romeojosh.com">
+            EMAIL // DIRECT ↗
+          </a>
+</div>
+<!-- Footer Coordinates -->
+<div class="pt-24 mt-20 border-t border-hairline/60 flex flex-col sm:flex-row items-center justify-between text-[11px] font-mono text-warmgray/60 tracking-widest uppercase gap-4">
+<div class="">
+            ROMEO JOSH © 2026 — BUILT WITH CURIOSITY AND DISCIPLINE.
+          </div>
+<div class="">
+            WESTERN VISAYAS, PHILIPPINES
+          </div>
+</div>
+</div>
+</section>
+<!-- END: Section05Contact -->
+</main>
+<!-- BEGIN: InteractiveScripts -->
+<!-- Script for Dual Portrait Mask Reveal Effect -->
+<script data-purpose="dual-portrait-tracker">
+    (function () {
+      const stage = document.getElementById('portrait-stage');
+      const revealLayer = document.getElementById('athlete-reveal-layer');
+      const lensRing = document.getElementById('lens-indicator');
+
+      if (!stage || !revealLayer || !lensRing) return;
+
+      // Tracking variables for smooth interpolation (Lerp)
+      let targetX = 0;
+      let targetY = 0;
+      let currentX = 0;
+      let currentY = 0;
+      let isHovered = false;
+      let animationFrameId = null;
+
+      // Set initial coordinates to center of the container
+      const setInitialCenter = () => {
+        const rect = stage.getBoundingClientRect();
+        targetX = rect.width / 2;
+        targetY = rect.height / 2;
+        currentX = targetX;
+        currentY = targetY;
+        updateMaskPosition(currentX, currentY);
+      };
+
+      const updateMaskPosition = (x, y) => {
+        // Feathered circular mask
+        const maskGradient = `radial-gradient(circle 140px at ${x}px ${y}px, black 70%, transparent 100%)`;
+        revealLayer.style.webkitMaskImage = maskGradient;
+        revealLayer.style.maskImage = maskGradient;
+
+        // Reposition lens ring
+        lensRing.style.left = `${x}px`;
+        lensRing.style.top = `${y}px`;
+      };
+
+      // Smooth interpolation animation loop
+      const renderLoop = () => {
+        // Linear interpolation factor (0.12 for smooth athletic lag)
+        currentX += (targetX - currentX) * 0.12;
+        currentY += (targetY - currentY) * 0.12;
+
+        updateMaskPosition(currentX, currentY);
+
+        animationFrameId = requestAnimationFrame(renderLoop);
+      };
+
+      // Handle Pointer Movement (mouse + touch)
+      const handlePointer = (clientX, clientY) => {
+        const rect = stage.getBoundingClientRect();
+        const x = clientX - rect.left;
+        const y = clientY - rect.top;
+
+        // Clamp inside container
+        targetX = Math.max(0, Math.min(rect.width, x));
+        targetY = Math.max(0, Math.min(rect.height, y));
+      };
+
+      stage.addEventListener('mouseenter', () => {
+        isHovered = true;
+        lensRing.style.opacity = '1';
+      });
+
+      stage.addEventListener('mouseleave', () => {
+        isHovered = false;
+        // Slowly drift back to center
+        const rect = stage.getBoundingClientRect();
+        targetX = rect.width / 2;
+        targetY = rect.height / 2;
+      });
+
+      stage.addEventListener('mousemove', (e) => {
+        handlePointer(e.clientX, e.clientY);
+      });
+
+      // Touch events support for mobile devices
+      stage.addEventListener('touchstart', (e) => {
+        if (e.touches && e.touches[0]) {
+          lensRing.style.opacity = '1';
+          handlePointer(e.touches[0].clientX, e.touches[0].clientY);
+        }
+      }, { passive: true });
+
+      stage.addEventListener('touchmove', (e) => {
+        if (e.touches && e.touches[0]) {
+          handlePointer(e.touches[0].clientX, e.touches[0].clientY);
+        }
+      }, { passive: true });
+
+      window.addEventListener('resize', setInitialCenter);
+
+      // Initialize
+      setInitialCenter();
+      renderLoop();
+    })();
+  </script>
+<!-- END: InteractiveScripts -->
+
+
+</body></html>

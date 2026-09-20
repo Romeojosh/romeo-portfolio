@@ -1,6 +1,7 @@
 import React from "react";
 import { PageShell } from "./components/PageShell";
 import { Hero } from "./sections/Hero";
+import { About } from "./sections/About";
 
 interface SectionPlaceholder {
   id: string;
@@ -9,7 +10,6 @@ interface SectionPlaceholder {
 }
 
 const PLACEHOLDER_SECTIONS: SectionPlaceholder[] = [
-  { id: "about", number: "02", name: "About" },
   { id: "work", number: "03", name: "Work" },
   { id: "skills", number: "04", name: "Skills" },
   { id: "discipline", number: "05", name: "Discipline" },
@@ -21,6 +21,9 @@ export const App: React.FC = () => {
     <PageShell>
       {/* Real Hero Section */}
       <Hero />
+
+      {/* Real About Section */}
+      <About />
 
       {/* Remaining Section Placeholders */}
       {PLACEHOLDER_SECTIONS.map((section) => (

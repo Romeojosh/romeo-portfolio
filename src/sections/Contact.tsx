@@ -4,6 +4,10 @@ import { ArrowUpRight, Code2, Mail, MapPin, UserRound } from "lucide-react";
 
 // TODO: Replace with the real deployment email before publishing.
 const CONTACT_EMAIL = "your-email@example.com";
+// TODO: Add the real GitHub profile URL when it is available.
+const GITHUB_URL: string | undefined = undefined;
+// TODO: Add the real LinkedIn profile URL when it is available.
+const LINKEDIN_URL: string | undefined = undefined;
 
 const contactDetails = [
   {
@@ -15,13 +19,15 @@ const contactDetails = [
   },
   {
     label: "GITHUB",
-    value: "Link pending",
+    value: GITHUB_URL ?? "Link pending",
+    href: GITHUB_URL,
     icon: Code2,
     external: false,
   },
   {
     label: "LINKEDIN",
-    value: "Link pending",
+    value: LINKEDIN_URL ?? "Link pending",
+    href: LINKEDIN_URL,
     icon: UserRound,
     external: false,
   },

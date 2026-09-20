@@ -6,6 +6,7 @@ import { Projects } from "./sections/Projects";
 import { Skills } from "./sections/Skills";
 import { Discipline } from "./sections/Discipline";
 import { Contact } from "./sections/Contact";
+import { Footer } from "./components/Footer";
 
 export const App: React.FC = () => {
   return (
@@ -27,6 +28,8 @@ export const App: React.FC = () => {
 
       {/* Real Contact Section */}
       <Contact />
+
+      <Footer />
     </PageShell>
   );
 };

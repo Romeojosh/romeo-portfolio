@@ -168,6 +168,18 @@ body {
   color: var(--color-text-secondary);
 }
 
+.text-gradient-amber-lemon {
+  background: linear-gradient(
+    90deg,
+    #E69A3A 0%,
+    #F6B85F 50%,
+    #FFFB3C 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
 /* ==========================================================================
    Surface Utilities
    ========================================================================== */

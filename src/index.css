@@ -19,6 +19,8 @@
   --color-obsidian: #0B0908;
   --color-paper: #F3EEE8;
   --color-warmgray: #AFA49A;
+  --color-amber-accent: #E69A3A;
+  --color-amber-glow: #F6B85F;
 
   /* ==========================================================================
      Design Tokens — Typography Families
@@ -56,6 +58,8 @@
   --color-elevated: #211813;
   --color-amber: #E69A3A;
   --color-gold: #F6B85F;
+  --color-amber-accent: #E69A3A;
+  --color-amber-glow: #F6B85F;
   --color-athletic-red: #C92328;
   --color-deep-red: #75191B;
   --color-text-primary: #F3EEE8;

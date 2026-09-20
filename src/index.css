@@ -249,6 +249,27 @@ body {
   background: radial-gradient(circle at center, rgba(168, 111, 44, 0.16) 0%, rgba(168, 111, 44, 0.035) 50%, transparent 70%);
 }
 
+@keyframes tech-logo-loop {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.tech-logo-loop-track {
+  animation: tech-logo-loop 32s linear infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tech-logo-loop-track {
+    animation: none;
+    transform: none;
+  }
+}
+
 /* ============================================================================
    Desktop Custom Cursor
    ========================================================================== */

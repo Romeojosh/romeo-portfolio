@@ -9,8 +9,8 @@ export const DesignSystemPreview: React.FC = () => {
     { name: "Elevated", token: "--color-elevated", value: DESIGN_TOKENS.colors.elevated, textDark: false },
     { name: "Amber", token: "--color-amber", value: DESIGN_TOKENS.colors.amber, textDark: true },
     { name: "Gold", token: "--color-gold", value: DESIGN_TOKENS.colors.gold, textDark: true },
-    { name: "Athletic Red", token: "--color-athletic-red", value: DESIGN_TOKENS.colors.athleticRed, textDark: false },
-    { name: "Deep Red", token: "--color-deep-red", value: DESIGN_TOKENS.colors.deepRed, textDark: false },
+    { name: "Bronze", token: "--color-bronze", value: DESIGN_TOKENS.colors.bronze, textDark: false },
+    { name: "Olive", token: "--color-olive", value: DESIGN_TOKENS.colors.olive, textDark: false },
     { name: "Text Primary", token: "--color-text-primary", value: DESIGN_TOKENS.colors.textPrimary, textDark: true },
     { name: "Text Secondary", token: "--color-text-secondary", value: DESIGN_TOKENS.colors.textSecondary, textDark: true },
     { name: "Hairline", token: "--color-hairline", value: DESIGN_TOKENS.colors.hairline, textDark: false, isBorder: true },
@@ -21,7 +21,7 @@ export const DesignSystemPreview: React.FC = () => {
       {/* Subtle Ambient Background Lighting */}
       <div className="pointer-events-none fixed inset-0 overflow-hidden">
         <div className="absolute -top-40 -left-40 w-[600px] h-[600px] ambient-glow-amber opacity-60" />
-        <div className="absolute top-1/2 -right-40 w-[600px] h-[600px] ambient-glow-red opacity-40" />
+        <div className="absolute top-1/2 -right-40 w-[600px] h-[600px] ambient-glow-bronze opacity-40" />
       </div>
 
       <div className="relative portfolio-container py-12 md:py-20">
@@ -142,7 +142,7 @@ export const DesignSystemPreview: React.FC = () => {
               <div className="p-6 space-y-2">
                 <span className="type-micro-label text-[#E69A3A]">Muted Body Text (.type-body-muted)</span>
                 <p className="type-body-muted max-w-3xl text-sm sm:text-base">
-                  Every section is calculated for maximum contrast and zero fluff. Dark obsidian foundation accented with warm amber and athletic red.
+                  Every section is calculated for maximum contrast and zero fluff. Dark obsidian foundation accented with warm amber, bronze, and olive.
                 </p>
                 <p className="type-metadata text-[11px] text-[#AFA49A]">
                   Font: Plus Jakarta Sans Regular &bull; 15px/1.6 &bull; Text Secondary (#AFA49A)
@@ -301,7 +301,7 @@ export const DesignSystemPreview: React.FC = () => {
           <section className="space-y-6">
             <div className="flex items-center justify-between border-hairline-b pb-3">
               <div className="flex items-center gap-3">
-                <Flame className="w-4 h-4 text-[#C92328]" />
+                <Flame className="w-4 h-4 text-[#A86F2C]" />
                 <h2 className="type-section-heading text-xl sm:text-2xl text-[#F3EEE8]">
                   05 / Visual Effect Utilities
                 </h2>
@@ -319,12 +319,12 @@ export const DesignSystemPreview: React.FC = () => {
                 </p>
               </div>
 
-              {/* Red Glow */}
-              <div className="surface-base border-hairline glow-red p-6 space-y-2">
-                <span className="type-micro-label text-[#C92328]">.glow-red</span>
-                <h4 className="type-section-heading text-lg text-[#F3EEE8]">Red Glow</h4>
+              {/* Bronze Glow */}
+              <div className="surface-base border-hairline glow-bronze p-6 space-y-2">
+                <span className="type-micro-label text-[#A86F2C]">.glow-bronze</span>
+                <h4 className="type-section-heading text-lg text-[#F3EEE8]">Bronze Glow</h4>
                 <p className="type-body-muted text-xs">
-                  Athletic red radiance box shadow for high-intensity athletic elements.
+                  Subtle bronze radiance for technical and athletic details.
                 </p>
               </div>
 
@@ -345,11 +345,11 @@ export const DesignSystemPreview: React.FC = () => {
                 </p>
               </div>
 
-              {/* Ambient Red Radial Glow */}
-              <div className="h-40 surface-base border-hairline ambient-glow-red p-6 flex flex-col justify-between">
-                <span className="type-micro-label text-[#C92328]">.ambient-glow-red</span>
-                <p className="type-metadata text-xs text-[#C92328]">
-                  Soft radial deep red aura &bull; Center peak 18% opacity
+              {/* Ambient Bronze Radial Glow */}
+              <div className="h-40 surface-base border-hairline ambient-glow-bronze p-6 flex flex-col justify-between">
+                <span className="type-micro-label text-[#A86F2C]">.ambient-glow-bronze</span>
+                <p className="type-metadata text-xs text-[#A86F2C]">
+                  Soft radial bronze aura &bull; Center peak 16% opacity
                 </p>
               </div>
 
@@ -371,7 +371,7 @@ export const DesignSystemPreview: React.FC = () => {
             ROMEO JOSH &bull; DESIGN SYSTEM VERIFIED &bull; READY FOR PHASE 3
           </div>
           <div className="type-micro-label text-[#E69A3A]">
-            OBSIDIAN + AMBER + ATHLETIC RED
+            OBSIDIAN + AMBER + BRONZE + OLIVE
           </div>
         </footer>
       </div>

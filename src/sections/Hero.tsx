@@ -26,7 +26,7 @@ export const Hero: React.FC = () => {
       />
       <div
         aria-hidden="true"
-        className="absolute bottom-10 right-10 w-[450px] sm:w-[600px] h-[450px] sm:h-[600px] bg-[#75191B]/20 rounded-full blur-[160px] pointer-events-none"
+        className="absolute bottom-10 right-10 w-[450px] sm:w-[600px] h-[450px] sm:h-[600px] bg-[#A86F2C]/18 rounded-full blur-[160px] pointer-events-none"
       />
 
       {/* 12-Column Responsive Layout Container */}
@@ -112,7 +112,7 @@ export const Hero: React.FC = () => {
               <span className="text-[#F3EEE8]/90">ILOILO, PH</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className="text-[#C92328]">PULSE</span>
+              <span className="text-[#A86F2C]">PULSE</span>
               <span className="text-[#F3EEE8]/90">RECORD // 00:00:26</span>
             </div>
           </motion.div>
@@ -142,7 +142,7 @@ export const Hero: React.FC = () => {
             {/* Bottom Captions */}
             <div className="flex items-center justify-between text-[11px] font-mono text-[#AFA49A]/70 tracking-widest uppercase mt-3 px-1">
               <span>TECH LAYER // DEFAULT</span>
-              <span className="text-[#C92328]">WIT VARSITY // LENS</span>
+              <span className="text-[#8E9A46]">WIT VARSITY // LENS</span>
             </div>
           </div>
         </motion.div>

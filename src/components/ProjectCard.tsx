@@ -13,7 +13,8 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   index,
   isReversed = false,
 }) => {
-  const isRedAccent = project.accent === "red";
+  const isBronzeAccent = project.accent === "bronze";
+  const isOliveAccent = project.accent === "olive";
   const projectNumber = project.number || String(index + 1).padStart(2, "0");
 
   return (
@@ -42,8 +43,10 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
             </span>
             <span
               className={`px-3 py-1 rounded-full text-[10px] font-mono uppercase tracking-widest ${
-                isRedAccent
-                  ? "bg-[#75191B]/40 text-[#F3EEE8] border border-[#C92328]/40"
+                isBronzeAccent
+                  ? "bg-[#A86F2C]/15 text-[#F6B85F] border border-[#A86F2C]/45"
+                  : isOliveAccent
+                  ? "bg-[#8E9A46]/12 text-[#F3EEE8] border border-[#8E9A46]/40"
                   : "bg-[#E69A3A]/15 text-[#F6B85F] border border-[#E69A3A]/30"
               }`}
             >
@@ -124,7 +127,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
               <div className="flex items-center gap-2">
                 <span
                   className={`w-2 h-2 rounded-full ${
-                    isRedAccent ? "bg-[#C92328]" : "bg-[#E69A3A]"
+                    isBronzeAccent ? "bg-[#A86F2C]" : isOliveAccent ? "bg-[#8E9A46]" : "bg-[#E69A3A]"
                   }`}
                   aria-hidden="true"
                 />

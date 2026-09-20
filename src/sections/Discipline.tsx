@@ -31,9 +31,9 @@ export const Discipline: React.FC = () => {
     <section
       id="discipline"
       aria-label="Endurance and Athletics"
-      className="relative overflow-hidden border-t border-[rgba(201,35,40,0.28)] bg-[radial-gradient(circle_at_84%_42%,rgba(117,25,27,0.28),transparent_35%),linear-gradient(135deg,#0B0908_0%,#130B0B_52%,#0B0908_100%)] px-4 py-20 scroll-mt-24 sm:px-6 sm:py-24 md:scroll-mt-28 md:py-28 lg:px-12"
+      className="relative overflow-hidden border-t border-[rgba(168,111,44,0.28)] bg-[radial-gradient(circle_at_84%_42%,rgba(168,111,44,0.18),transparent_35%),linear-gradient(135deg,#0B0908_0%,#15100D_52%,#0B0908_100%)] px-4 py-20 scroll-mt-24 sm:px-6 sm:py-24 md:scroll-mt-28 md:py-28 lg:px-12"
     >
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,transparent_0%,rgba(201,35,40,0.035)_50%,transparent_100%)]" />
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,transparent_0%,rgba(168,111,44,0.035)_50%,transparent_100%)]" />
 
       <div className="relative z-10 mx-auto max-w-[1400px]">
         <motion.div
@@ -41,10 +41,10 @@ export const Discipline: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={transitionBase}
-          className="mb-10 flex items-center gap-3 text-xs font-mono uppercase tracking-[0.18em] text-[#C92328] sm:mb-12"
+          className="mb-10 flex items-center gap-3 text-xs font-mono uppercase tracking-[0.18em] text-[#8E9A46] sm:mb-12"
         >
           <span>[ 04 ]</span>
-          <span className="h-px w-8 bg-[#C92328]/60" aria-hidden="true" />
+          <span className="h-px w-8 bg-[#8E9A46]/60" aria-hidden="true" />
           <span className="text-[#AFA49A]">Endurance &amp; Athletics</span>
         </motion.div>
 
@@ -59,7 +59,7 @@ export const Discipline: React.FC = () => {
             >
               <span className="block text-[#F3EEE8]">CODE.</span>
               <span className="text-gradient-amber-lemon block">RUN.</span>
-              <span className="block text-[#C92328]">REPEAT.</span>
+              <span className="block text-[#8E9A46]">REPEAT.</span>
             </motion.h2>
 
             <div className="mt-10 max-w-2xl space-y-6 sm:mt-12">
@@ -89,9 +89,9 @@ export const Discipline: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ ...transitionBase, delay: shouldReduceMotion ? 0 : 0.3 }}
-              className="mt-10 border-l-2 border-[#C92328] bg-[#15100D]/75 px-5 py-5 sm:mt-12 sm:px-6"
+              className="mt-10 border-l-2 border-[#8E9A46] bg-[#15100D]/75 px-5 py-5 sm:mt-12 sm:px-6"
             >
-              <span className="mb-3 block text-[10px] font-mono uppercase tracking-[0.16em] text-[#C92328]">
+              <span className="mb-3 block text-[10px] font-mono uppercase tracking-[0.16em] text-[#8E9A46]">
                 Mindset // In Practice
               </span>
               <p className="m-0 font-display text-base leading-relaxed text-[#F3EEE8] sm:text-lg">
@@ -147,8 +147,8 @@ export const Discipline: React.FC = () => {
               <figcaption className="mb-2.5 px-1 text-[10px] font-mono uppercase tracking-[0.16em] text-[#AFA49A]/70">
                 [ FIG. 02 — STUDENT ATHLETE ]
               </figcaption>
-              <div className="relative aspect-[4/5] overflow-hidden border border-[rgba(201,35,40,0.38)] bg-[#15100D] shadow-2xl shadow-black/70">
-                <div aria-hidden="true" className="absolute inset-0 z-10 bg-gradient-to-t from-[#0B0908]/55 via-transparent to-[#C92328]/10" />
+              <div className="relative aspect-[4/5] overflow-hidden border border-[rgba(168,111,44,0.42)] bg-[#15100D] shadow-[0_0_50px_rgba(168,111,44,0.18)]">
+                <div aria-hidden="true" className="absolute inset-0 z-10 bg-gradient-to-t from-[#0B0908]/55 via-transparent to-[#A86F2C]/10" />
                 <img
                   src={athletePortrait}
                   alt="Romeo Josh wearing the Western Institute of Technology varsity jersey"
@@ -162,7 +162,7 @@ export const Discipline: React.FC = () => {
               </div>
               <div className="mt-3 flex items-center justify-between gap-4 px-1 text-[10px] font-mono uppercase tracking-[0.14em] text-[#AFA49A]/75 sm:text-[11px]">
                 <span>WIT VARSITY</span>
-                <span className="text-[#C92328]">STUDENT ATHLETE // ILOILO</span>
+                <span className="text-[#8E9A46]">STUDENT ATHLETE // ILOILO</span>
               </div>
             </div>
           </motion.figure>

@@ -128,7 +128,7 @@ export const About: React.FC = () => {
                 <p className="text-sm font-display font-semibold text-[#F3EEE8] m-0">
                   Student • Developer • Athlete
                 </p>
-                <span className="text-[11px] font-mono text-[#C92328] block mt-1.5">
+                <span className="text-[11px] font-mono text-[#8E9A46] block mt-1.5">
                   Learning through consistency
                 </span>
               </div>

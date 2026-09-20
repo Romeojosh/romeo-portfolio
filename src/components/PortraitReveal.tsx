@@ -237,7 +237,7 @@ export const PortraitReveal: React.FC<PortraitRevealProps> = ({
           height: `${lensRingDiameter}px`,
           border: "1.5px solid rgba(246, 184, 95, 0.65)",
           boxShadow:
-            "0 0 35px rgba(230, 154, 58, 0.35), inset 0 0 25px rgba(201, 35, 40, 0.2)",
+            "0 0 35px rgba(230,154,58,0.30), inset 0 0 24px rgba(168,111,44,0.18)",
           opacity: 0,
           willChange: "transform",
         }}

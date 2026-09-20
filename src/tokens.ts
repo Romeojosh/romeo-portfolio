@@ -1,6 +1,6 @@
 /**
  * Design Tokens for Romeo Josh Portfolio
- * Visual direction: Dark warm obsidian + amber + athletic red
+ * Visual direction: Dark warm obsidian + amber + bronze + olive
  */
 
 export const DESIGN_TOKENS = {
@@ -10,8 +10,8 @@ export const DESIGN_TOKENS = {
     elevated: '#211813',
     amber: '#E69A3A',
     gold: '#F6B85F',
-    athleticRed: '#C92328',
-    deepRed: '#75191B',
+    bronze: '#A86F2C',
+    olive: '#8E9A46',
     textPrimary: '#F3EEE8',
     textSecondary: '#AFA49A',
     hairline: 'rgba(246, 184, 95, 0.16)',
@@ -29,8 +29,8 @@ export const DESIGN_TOKENS = {
   glows: {
     amber: 'rgba(230, 154, 58, 0.28)',
     gold: 'rgba(246, 184, 95, 0.22)',
-    red: 'rgba(201, 35, 40, 0.28)',
-    deepRed: 'rgba(117, 25, 27, 0.35)',
+    bronze: 'rgba(168, 111, 44, 0.24)',
+    olive: 'rgba(142, 154, 70, 0.18)',
   },
 } as const;
 

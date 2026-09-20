@@ -8,7 +8,7 @@ export interface SkillGroup {
 export interface StatItem {
   value: string;
   label: string;
-  accent?: "amber" | "red" | "gradient";
+  accent?: "amber" | "olive" | "gradient";
 }
 
 export const SKILL_GROUPS: SkillGroup[] = [
@@ -91,6 +91,6 @@ export const STATS: StatItem[] = [
   {
     value: "∞",
     label: "LEARNING",
-    accent: "red",
+    accent: "olive",
   },
 ];

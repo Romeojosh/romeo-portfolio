@@ -21,7 +21,7 @@ export interface Project {
   liveUrl?: string;
   githubUrl?: string;
   caseStudyUrl?: string;
-  accent?: "amber" | "red" | "gold";
+  accent?: "amber" | "bronze" | "olive" | "gold";
   mockup: ProjectMockupDetail;
 }
 
@@ -35,7 +35,7 @@ export const PROJECTS: Project[] = [
     description:
       "Web-based athlete document management and eligibility verification system for PRISAA. Coaches can upload athlete requirements, eligibility committee members can review and verify submissions, and users can track document and eligibility status through centralized dashboards.",
     technologies: ["React", "TypeScript", "Tailwind CSS", "Supabase", "ExcelJS"],
-    accent: "red",
+    accent: "bronze",
     mockup: {
       headerTag: "ILOPRISAA // ELIGIBILITY WORKFLOW",
       sublabel: "DOCUMENT VALIDATION MODULE",
@@ -97,7 +97,7 @@ export const PROJECTS: Project[] = [
     description:
       "Running event discovery platform created to help runners find races in Iloilo and other locations, with filters for distance, date and time, and location.",
     technologies: ["React", "TypeScript", "Tailwind CSS"],
-    accent: "red",
+    accent: "olive",
     mockup: {
       headerTag: "NEXRUN // RACE DISCOVERY",
       sublabel: "EVENT INDEXING ENGINE",

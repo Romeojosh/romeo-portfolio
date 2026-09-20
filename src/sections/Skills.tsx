@@ -105,8 +105,8 @@ export const Skills: React.FC = () => {
               const valueClass =
                 stat.accent === "gradient"
                   ? "text-gradient-amber-lemon"
-                  : stat.accent === "red"
-                  ? "text-[#C92328]"
+                  : stat.accent === "olive"
+                  ? "text-[#8E9A46]"
                   : "text-[#E69A3A]";
 
               return (

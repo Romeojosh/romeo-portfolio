@@ -19,7 +19,7 @@ export const Hero: React.FC = () => {
     <section
       id="hero"
       aria-label="Hero Introduction"
-      className="relative min-h-[92vh] lg:min-h-screen pt-28 md:pt-36 pb-16 md:pb-24 px-4 sm:px-6 lg:px-12 flex items-center overflow-hidden grain-overlay bg-[#111214]"
+      className="relative min-h-[92vh] lg:min-h-screen pt-28 md:pt-36 pb-16 md:pb-24 px-4 sm:px-6 lg:px-12 flex items-center overflow-clip grain-overlay bg-[#111214]"
     >
       <AnimatedBackground />
 

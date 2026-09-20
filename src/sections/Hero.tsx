@@ -3,6 +3,7 @@ import { motion, useReducedMotion } from "motion/react";
 import romeoDeveloperImg from "../assets/portraits/romeo-developer.png";
 import romeoAthleteImg from "../assets/portraits/romeo-athlete.png";
 import { PortraitReveal } from "../components/PortraitReveal";
+import { TextScramble } from "../components/effects/TextScramble";
 
 export const Hero: React.FC = () => {
   const shouldReduceMotion = useReducedMotion();
@@ -46,7 +47,11 @@ export const Hero: React.FC = () => {
               className="w-2 h-2 rounded-full bg-[#E69A3A] shadow-[0_0_8px_#E69A3A] shrink-0"
               aria-hidden="true"
             />
-            <span className="truncate">PORTFOLIO / 2026 • ATHLETE &amp; TECHNOLOGIST</span>
+            <TextScramble
+              text="PORTFOLIO / 2026 • ATHLETE & TECHNOLOGIST"
+              trigger="view"
+              className="truncate"
+            />
           </motion.div>
 
           {/* Hero Heading & Role Label */}

@@ -1,6 +1,7 @@
 import React from "react";
 import { motion, useReducedMotion } from "motion/react";
 import { SKILL_GROUPS, STATS } from "../data/skills";
+import { TextScramble } from "../components/effects/TextScramble";
 
 export const Skills: React.FC = () => {
   const shouldReduceMotion = useReducedMotion();
@@ -97,7 +98,7 @@ export const Skills: React.FC = () => {
         >
           {/* Contextual label */}
           <p className="text-[10px] font-mono tracking-widest text-[#AFA49A]/60 uppercase mb-8 sm:mb-10">
-            CURRENT FOCUS // 2026
+            <TextScramble text="CURRENT FOCUS // 2026" trigger="view" />
           </p>
 
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10">

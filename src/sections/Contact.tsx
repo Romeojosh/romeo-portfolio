@@ -1,6 +1,7 @@
 import React from "react";
 import { motion, useReducedMotion } from "motion/react";
 import { ArrowUpRight, Code2, Mail, MapPin, UserRound } from "lucide-react";
+import { TextScramble } from "../components/effects/TextScramble";
 
 const CONTACT_EMAIL = "romeojoshrequiron@gmail.com";
 const GITHUB_URL = "https://github.com/Romeojosh";
@@ -68,7 +69,7 @@ export const Contact: React.FC = () => {
         >
           <span className="text-[#E69A3A]">[ 05 ]</span>
           <span className="h-px w-8 bg-[#E69A3A]/60" aria-hidden="true" />
-          <span className="text-[#74787F]">Initiate Connection</span>
+          <TextScramble text="Initiate Connection" trigger="view" className="text-[#74787F]" />
         </motion.div>
 
         <div className="grid grid-cols-1 items-start gap-14 lg:grid-cols-12 lg:gap-10">

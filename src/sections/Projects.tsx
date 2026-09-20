@@ -2,6 +2,7 @@ import React from "react";
 import { motion, useReducedMotion } from "motion/react";
 import { PROJECTS } from "../data/projects";
 import { ProjectCard } from "../components/ProjectCard";
+import { TextScramble } from "../components/effects/TextScramble";
 
 export const Projects: React.FC = () => {
   const shouldReduceMotion = useReducedMotion();
@@ -31,7 +32,7 @@ export const Projects: React.FC = () => {
             <div className="flex items-center gap-3 text-xs font-mono tracking-widest uppercase text-[#E69A3A] mb-3">
               <span>[ 02 ]</span>
               <span className="w-8 h-[1px] bg-[#E69A3A]/40" aria-hidden="true" />
-              <span className="text-[#A6A8AD]">Engineered Products</span>
+              <TextScramble text="Engineered Products" trigger="view" className="text-[#A6A8AD]" />
             </div>
 
             {/* Main Section Heading */}

@@ -1,6 +1,7 @@
 import React from "react";
 import { motion, useReducedMotion } from "motion/react";
 import athletePortrait from "../assets/romeo-athlete.png";
+import { TextScramble } from "../components/effects/TextScramble";
 
 const telemetryCards = [
   {
@@ -46,7 +47,7 @@ export const Discipline: React.FC = () => {
         >
           <span>[ 04 ]</span>
           <span className="h-px w-8 bg-[#A86F2C]/60" aria-hidden="true" />
-          <span className="text-[#AFA49A]">Endurance &amp; Athletics</span>
+          <TextScramble text="Endurance & Athletics" trigger="view" className="text-[#AFA49A]" />
         </motion.div>
 
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-8 xl:gap-14">

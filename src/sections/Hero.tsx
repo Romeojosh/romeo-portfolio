@@ -1,7 +1,7 @@
 import React from "react";
 import { motion, useReducedMotion } from "motion/react";
-import romeoDeveloperImg from "../assets/portraits/romeo-developer.jpg";
-import romeoAthleteImg from "../assets/portraits/romeo-athlete.jpg";
+import romeoDeveloperImg from "../assets/portraits/romeo-developer.png";
+import romeoAthleteImg from "../assets/portraits/romeo-athlete.png";
 import { PortraitReveal } from "../components/PortraitReveal";
 
 export const Hero: React.FC = () => {

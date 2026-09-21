@@ -14,11 +14,24 @@ interface Particle {
   isAccent: boolean;
 }
 
-const COLORS = [
+interface ParticleColor {
+  value: string;
+  ambientAlpha: number;
+  accentAlpha: number;
+}
+
+const DARK_COLORS: ParticleColor[] = [
   { value: "246,184,95", ambientAlpha: 0.58, accentAlpha: 0.86 },
   { value: "255,224,160", ambientAlpha: 0.52, accentAlpha: 0.94 },
   { value: "230,154,58", ambientAlpha: 0.48, accentAlpha: 0.74 },
   { value: "168,111,44", ambientAlpha: 0.35, accentAlpha: 0.56 },
+];
+
+const LIGHT_COLORS: ParticleColor[] = [
+  { value: "122,81,36", ambientAlpha: 0.34, accentAlpha: 0.72 },
+  { value: "169,101,22", ambientAlpha: 0.40, accentAlpha: 0.80 },
+  { value: "145,105,47", ambientAlpha: 0.32, accentAlpha: 0.68 },
+  { value: "82,84,88", ambientAlpha: 0.26, accentAlpha: 0.56 },
 ];
 
 const ACCENT_COLORS = [0, 1, 2, 0, 2, 0, 1, 3];
@@ -29,7 +42,13 @@ const ACCENT_ZONES = [
   [0.5, 0.84], [0.86, 0.8],
 ] as const;
 
-const createParticles = (width: number, height: number, count: number, accentCount: number): Particle[] =>
+const createParticles = (
+  width: number,
+  height: number,
+  count: number,
+  accentCount: number,
+  colors: ParticleColor[],
+): Particle[] =>
   Array.from({ length: count }, (_, index) => ({
     x: index < accentCount
       ? Math.max(0, Math.min(width, (ACCENT_ZONES[index % ACCENT_ZONES.length][0] + (Math.random() - 0.5) * 0.18) * width))
@@ -42,12 +61,12 @@ const createParticles = (width: number, height: number, count: number, accentCou
       : index % 3 === 0 ? 1 + Math.random() * 0.2 : index % 3 === 1 ? 1.1 + Math.random() * 0.4 : 1.3 + Math.random() * 0.5,
     vx: (Math.random() - 0.5) * 0.18,
     vy: (Math.random() - 0.5) * 0.14,
-    alpha: (index < accentCount ? COLORS[ACCENT_COLORS[index % ACCENT_COLORS.length]].accentAlpha : COLORS[index % COLORS.length].ambientAlpha)
+    alpha: (index < accentCount ? colors[ACCENT_COLORS[index % ACCENT_COLORS.length]].accentAlpha : colors[index % colors.length].ambientAlpha)
       * (index < accentCount ? 0.92 + Math.random() * 0.08 : index % 3 === 0 ? 0.68 : index % 3 === 1 ? 0.84 : 1)
       * (0.9 + Math.random() * 0.1),
     phase: Math.random() * Math.PI * 2,
     twinkle: 0.25 + Math.random() * 0.45,
-    color: (index < accentCount ? COLORS[ACCENT_COLORS[index % ACCENT_COLORS.length]] : COLORS[index % COLORS.length]).value,
+    color: (index < accentCount ? colors[ACCENT_COLORS[index % ACCENT_COLORS.length]] : colors[index % colors.length]).value,
     isAccent: index < accentCount,
   }));
 
@@ -71,6 +90,9 @@ export const ParticleField: React.FC = () => {
     const getParticleConfig = () => window.matchMedia("(max-width: 767px)").matches
       ? { count: 28, accentCount: 5 }
       : { count: 60, accentCount: 10 };
+    const lightThemeRef = { current: document.documentElement.classList.contains("light") };
+
+    const getColors = () => lightThemeRef.current ? LIGHT_COLORS : DARK_COLORS;
 
     const draw = (time = 0) => {
       const { width, height } = sizeRef.current;
@@ -87,7 +109,7 @@ export const ParticleField: React.FC = () => {
             ? 1 + Math.sin(time * 0.001 * particle.twinkle + particle.phase) * 0.08
             : 0.82 + Math.sin(time * 0.001 * particle.twinkle + particle.phase) * 0.18;
 
-        const haloAlpha = particle.alpha * shimmer * 0.2;
+        const haloAlpha = particle.alpha * shimmer * (lightThemeRef.current ? 0.08 : 0.2);
 
         context.beginPath();
         context.fillStyle = `rgba(${particle.color},${haloAlpha})`;
@@ -146,10 +168,23 @@ export const ParticleField: React.FC = () => {
       canvas.width = Math.max(1, Math.floor(rect.width * dpr));
       canvas.height = Math.max(1, Math.floor(rect.height * dpr));
       const { count, accentCount } = getParticleConfig();
-      particlesRef.current = createParticles(rect.width, rect.height, count, accentCount);
+      particlesRef.current = createParticles(rect.width, rect.height, count, accentCount, getColors());
       draw();
       start();
     };
+
+    const themeObserver = new MutationObserver(() => {
+      const isLight = document.documentElement.classList.contains("light");
+      if (isLight === lightThemeRef.current) return;
+
+      lightThemeRef.current = isLight;
+      const { width, height } = sizeRef.current;
+      if (width && height) {
+        const { count, accentCount } = getParticleConfig();
+        particlesRef.current = createParticles(width, height, count, accentCount, getColors());
+        draw();
+      }
+    });
 
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -169,6 +204,7 @@ export const ParticleField: React.FC = () => {
     const resizeObserver = new ResizeObserver(resize);
     resizeObserver.observe(canvas);
     observer.observe(canvas);
+    themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
     document.addEventListener("visibilitychange", handleVisibilityChange);
     resize();
 
@@ -176,6 +212,7 @@ export const ParticleField: React.FC = () => {
       stop();
       resizeObserver.disconnect();
       observer.disconnect();
+      themeObserver.disconnect();
       document.removeEventListener("visibilitychange", handleVisibilityChange);
     };
   }, [shouldReduceMotion]);

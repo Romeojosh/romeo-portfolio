@@ -68,7 +68,7 @@ export const AnimatedBackground: React.FC = () => {
       <motion.div
         className="absolute -left-32 -top-32 h-[28rem] w-[28rem] sm:h-[34rem] sm:w-[34rem]"
         style={{
-          background: "radial-gradient(circle, rgba(230,154,58,0.10) 0%, rgba(230,154,58,0.035) 44%, transparent 70%)",
+          background: "radial-gradient(circle, var(--hero-glow-amber-strong) 0%, var(--hero-glow-amber-soft) 44%, transparent 70%)",
           willChange: "transform",
         }}
         animate={amberControls}
@@ -77,7 +77,7 @@ export const AnimatedBackground: React.FC = () => {
       <motion.div
         className="absolute -bottom-40 -right-40 h-[34rem] w-[34rem] sm:h-[42rem] sm:w-[42rem]"
         style={{
-          background: "radial-gradient(circle, rgba(168,111,44,0.12) 0%, rgba(168,111,44,0.04) 48%, transparent 72%)",
+          background: "radial-gradient(circle, var(--hero-glow-bronze-strong) 0%, var(--hero-glow-bronze-soft) 48%, transparent 72%)",
           willChange: "transform",
         }}
         animate={bronzeControls}

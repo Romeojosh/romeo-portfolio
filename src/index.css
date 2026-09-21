@@ -45,6 +45,11 @@
   --glow-amber: rgba(230, 154, 58, 0.28);
   --glow-gold: rgba(246, 184, 95, 0.22);
   --glow-bronze: rgba(168, 111, 44, 0.24);
+  --hero-glow-amber-strong: rgba(230,154,58,0.10);
+  --hero-glow-amber-soft: rgba(230,154,58,0.035);
+  --hero-glow-bronze-strong: rgba(168,111,44,0.12);
+  --hero-glow-bronze-soft: rgba(168,111,44,0.04);
+  --grain-color: rgba(246, 184, 95, 0.05);
 
   /* Hairline Borders */
   --border-hairline: 1px solid var(--color-hairline);
@@ -237,7 +242,7 @@ body {
 }
 
 .grain-overlay {
-  background-image: radial-gradient(rgba(246, 184, 95, 0.05) 1px, transparent 0);
+  background-image: radial-gradient(var(--grain-color) 1px, transparent 0);
   background-size: 24px 24px;
 }
 
@@ -288,6 +293,11 @@ body {
   --glow-amber: rgba(184, 116, 26, 0.12);
   --glow-gold: rgba(201, 148, 46, 0.10);
   --glow-bronze: rgba(122, 81, 36, 0.10);
+  --hero-glow-amber-strong: rgba(166, 112, 45, 0.05);
+  --hero-glow-amber-soft: rgba(166, 112, 45, 0.018);
+  --hero-glow-bronze-strong: rgba(96, 72, 50, 0.045);
+  --hero-glow-bronze-soft: rgba(96, 72, 50, 0.018);
+  --grain-color: rgba(45, 45, 45, 0.05);
 }
 
 .light body,
@@ -340,6 +350,8 @@ body {
 .light .theme-animated-background { opacity: 0.24; filter: saturate(0.7); }
 .light .theme-particle-field { opacity: 0.26; }
 .light .theme-global-ambient { opacity: 0.15; }
+.light .theme-global-amber { background-color: rgba(166, 112, 45, 0.04) !important; }
+.light .theme-global-bronze { background-color: rgba(40, 42, 46, 0.03) !important; }
 
 .light .theme-hero-secondary,
 .light .theme-hero-metadata {

@@ -7,7 +7,7 @@ const telemetryCards = [
   {
     label: "IDENTITY",
     value: "WIT Varsity Athlete",
-    subtext: "Student • Runner • Developer",
+    subtext: "IT Student • Runner",
   },
   {
     label: "WHAT SPORT TAUGHT ME",
@@ -17,7 +17,7 @@ const telemetryCards = [
   {
     label: "WHAT IT SUPPORTS",
     value: "Education",
-    subtext: "Using talent as an opportunity to keep learning",
+    subtext: "Using talent as an opportunity to finish my studies",
   },
 ];
 

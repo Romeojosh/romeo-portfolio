@@ -126,7 +126,7 @@ export const About: React.FC = () => {
                   DISCIPLINE
                 </span>
                 <p className="text-sm font-display font-semibold text-[#F3EEE8] m-0">
-                  Student • Developer • Athlete
+                  IT Student • Athlete • Aspiring Developer
                 </p>
                 <span className="text-[11px] font-mono text-[#A86F2C] block mt-1.5">
                   Learning through consistency

@@ -1,3 +1,10 @@
+import carsadaImage from "../assets/projects/carsada.png";
+import dailyUiImage from "../assets/projects/dailyui.png";
+import iloprisaaImage from "../assets/projects/iloprisaa.png";
+import nexrunImage from "../assets/projects/nexrun.png";
+import tidytimeImage from "../assets/projects/tidytime.png";
+import wittrackImage from "../assets/projects/wittrack.png";
+
 export interface ProjectMockupDetail {
   headerTag: string;
   sublabel: string;
@@ -17,6 +24,7 @@ export interface Project {
   category: string;
   description: string;
   technologies: string[];
+  status?: string;
   image?: string;
   liveUrl?: string;
   githubUrl?: string;
@@ -31,8 +39,10 @@ export interface SecondaryProject {
   title: string;
   description: string;
   category: "APP PROJECT" | "UI/UX PROTOTYPE";
+  status?: string;
   liveUrl?: string;
   figmaUrl?: string;
+  image?: string;
 }
 
 export const PROJECTS: Project[] = [
@@ -41,10 +51,12 @@ export const PROJECTS: Project[] = [
     number: "01",
     title: "ILOPRISAA",
     year: "2026",
-    category: "ATHLETE DOCUMENT MANAGEMENT SYSTEM",
+    category: "ATHLETE DOCUMENT MANAGEMENT & ELIGIBILITY SYSTEM",
+    status: "IN DEVELOPMENT",
     description:
       "Web-based athlete document management and eligibility verification system for PRISAA. Coaches can upload athlete requirements, eligibility committee members can review and verify submissions, and users can track document and eligibility status through centralized dashboards.",
     technologies: ["React", "TypeScript", "Tailwind CSS", "Supabase", "ExcelJS"],
+    image: iloprisaaImage,
     accent: "bronze",
     mockup: {
       headerTag: "ILOPRISAA // ELIGIBILITY WORKFLOW",
@@ -68,34 +80,47 @@ export const PROJECTS: Project[] = [
     },
   },
   {
-    id: "schedmate",
+    id: "wittrack",
     number: "02",
-    title: "SchedMate",
+    title: "WITTrack",
     year: "2026",
-    category: "SMART SCHEDULING SYSTEM",
+    category: "RESULTS, EVENTS, AND ROLE MANAGEMENT APP",
+    status: "PERSONAL PROJECT",
     description:
-      "Scheduling application designed to organize and manage academic schedules, rooms, and time assignments in a clearer and more structured workflow.",
-    technologies: ["React", "TypeScript", "Tailwind CSS", "Node.js"],
+      "WITTrack is an application that helps tournament managers and track officials manage track and field events, results, and athlete roles. It provides a centralized platform for event scheduling, result tracking, and role assignments for athletes, officials, and volunteers.",
+    technologies: [
+      "React",
+      "TypeScript",
+      "Vite",
+      "Tailwind CSS",
+      "Motion",
+      "Lucide React",
+      "CSS Masking",
+      "Pointer Tracking",
+      "GitHub",
+      "Vercel",
+    ],
+    image: wittrackImage,
     accent: "amber",
     mockup: {
-      headerTag: "SCHEDMATE // TIMETABLE ENGINE",
-      sublabel: "ROOM & TIME ALLOCATION",
-      statusBadge: "STRUCTURED WORKFLOW",
+      headerTag: "WITTRACK // ELIGIBILITY WORKFLOW",
+      sublabel: "ATHLETE RECORDS & STATUS",
+      statusBadge: "CENTRALIZED TRACKING",
       workflowSteps: [
         {
-          label: "FACILITY ALLOCATION",
-          description: "Laboratory & lecture room capacity assignments",
+          label: "ATHLETE RECORDS",
+          description: "Centralized athlete records for school staff",
         },
         {
-          label: "FACULTY TIMETABLES",
-          description: "Structured section periods & instructor load mapping",
+          label: "ELIGIBILITY DOCUMENTS",
+          description: "Organized eligibility documents and requirements",
         },
         {
-          label: "TIMELINE VISUALIZER",
-          description: "Weekly academic calendar & schedule conflict view",
+          label: "SEARCHABLE STATUS",
+          description: "Searchable athlete eligibility status monitoring",
         },
       ],
-      systemArchitecture: "STRUCTURED TIMETABLE MATRIX • ACADEMIC PLANNING",
+      systemArchitecture: "ATHLETE RECORDS • ELIGIBILITY STATUS TRACKING",
     },
   },
   {
@@ -104,9 +129,11 @@ export const PROJECTS: Project[] = [
     title: "Nexrun",
     year: "2025",
     category: "RUNNING EVENT DISCOVERY PLATFORM",
+    status: "PROTOTYPE",
     description:
       "Running event discovery platform created to help runners find races in Iloilo and other locations, with filters for distance, date and time, and location.",
     technologies: ["React", "TypeScript", "Tailwind CSS"],
+    image: nexrunImage,
     githubUrl: "https://github.com/Romeojosh/nexrun",
     accent: "amber",
     mockup: {
@@ -139,6 +166,8 @@ export const SECONDARY_PROJECTS: SecondaryProject[] = [
     description:
       "Carsada assists commuters in Iloilo City by helping them find jeepney routes and connections to reach their destination.",
     category: "APP PROJECT",
+    status: "DEPLOYED",
+    image: carsadaImage,
     liveUrl: "https://carsadaapp.vercel.app/",
   },
   {
@@ -147,6 +176,8 @@ export const SECONDARY_PROJECTS: SecondaryProject[] = [
     description:
       "A student productivity and organization app designed to help students stay organized, productive, and on track.",
     category: "UI/UX PROTOTYPE",
+    status: "UI/UX PROTOTYPE",
+    image: tidytimeImage,
     figmaUrl:
       "https://www.figma.com/design/OfTVrpp5NaxoqzNzjtols5/prototype-for-design-thinking-challenge?node-id=0-1&p=f&t=dxNEwBfbiNL316om-0",
   },
@@ -156,6 +187,8 @@ export const SECONDARY_PROJECTS: SecondaryProject[] = [
     description:
       "A UI design created for Daily UI Challenge #1 focused on an Add to Cart interface.",
     category: "UI/UX PROTOTYPE",
+    status: "UI DESIGN EXERCISE",
+    image: dailyUiImage,
     figmaUrl:
       "https://www.figma.com/design/jcppgu5nlYwbR0i8JBFLfm/Daily-UI-Challenge--1-Requiron?node-id=0-1&p=f&t=GZ8DFznAXOGKeoEv-0",
   },

@@ -8,11 +8,13 @@ export interface CarouselProject {
   number: string;
   title: string;
   category: string;
+  status?: string;
   subtitle?: string;
   description: string;
   technologies?: string[];
   links?: Array<{ label: string; href: string }>;
   visualLabel?: string;
+  image?: string;
 }
 
 interface ProjectCarouselProps {
@@ -65,7 +67,7 @@ export const ProjectCarousel: React.FC<ProjectCarouselProps> = ({ items }) => {
                   selectCard(index);
                 }
               }}
-              className={`absolute left-1/2 top-1/2 h-[32rem] w-[calc(100%-3rem)] rounded-3xl border bg-[#181A1D] p-4 outline-none sm:h-[34rem] sm:w-[min(58vw,600px)] sm:p-5 lg:h-[38rem] ${
+              className={`absolute left-1/2 top-1/2 h-[34rem] w-[calc(100%-3rem)] rounded-3xl border bg-[#181A1D] p-4 outline-none sm:h-[36rem] sm:w-[min(58vw,600px)] sm:p-5 lg:h-[38rem] ${
                 isActive
                   ? "border-[#E69A3A]/60 shadow-[0_10px_15px_rgba(0,0,0,0.32)]"
                   : "border-[rgba(255,255,255,0.08)] opacity-60 hover:border-[#A86F2C]/60 focus-visible:ring-2 focus-visible:ring-[#A86F2C]"
@@ -109,12 +111,12 @@ export const ProjectCarousel: React.FC<ProjectCarouselProps> = ({ items }) => {
 
                   {isActive ? (
                     <>
-                      <p className="mt-3 max-w-3xl text-sm leading-6 text-[#A6A8AD]">{project.description}</p>
-                      {project.technologies && project.technologies.length > 0 && (
-                        <div className="mt-5 flex flex-wrap gap-2">
-                          {project.technologies.map((technology) => <span key={technology} className="rounded-md border border-[rgba(255,255,255,0.08)] bg-[#22252A] px-3 py-1.5 text-xs font-mono text-[#F3F2EE]">{technology}</span>)}
-                        </div>
+                      {project.status && (
+                        <span className="mt-3 inline-flex w-fit items-center rounded-md border border-[#A86F2C]/50 bg-[#22252A] px-2.5 py-1 text-[10px] font-mono uppercase tracking-[0.16em] text-[#F6B85F]">
+                          {project.status}
+                        </span>
                       )}
+                      <p className="mt-3 max-w-3xl text-sm leading-6 text-[#A6A8AD]">{project.description}</p>
                       {project.links && project.links.length > 0 && (
                         <div className="mt-auto flex flex-wrap gap-5 pt-5">
                           {project.links.map((link) => (
@@ -135,7 +137,7 @@ export const ProjectCarousel: React.FC<ProjectCarouselProps> = ({ items }) => {
         })}
       </div>
 
-      <div className="mt-4 flex items-center justify-center gap-5 text-[10px] font-mono uppercase tracking-[0.16em] text-[#74787F]">
+      <div className="mt-4 flex items-center justify-center gap-5 text-[20px] font-mono uppercase tracking-[0.16em] text-[#74787F]">
         <button type="button" onClick={() => move(-1)} data-cursor="link" aria-label="Previous project" className="inline-flex items-center gap-2 px-2 py-2 text-[#A6A8AD] transition-colors hover:text-[#F6B85F] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#E69A3A]">
           <ArrowLeft className="h-3.5 w-3.5" aria-hidden="true" /> PREV
         </button>
@@ -149,11 +151,23 @@ export const ProjectCarousel: React.FC<ProjectCarouselProps> = ({ items }) => {
 };
 
 const ProjectVisual: React.FC<{ project: CarouselProject }> = ({ project }) => (
-  <div className="absolute inset-0 flex items-center justify-center bg-[radial-gradient(circle_at_50%_35%,rgba(230,154,58,0.14),transparent_62%)] p-6 sm:p-10">
-    <div className="w-full max-w-2xl text-center">
-      <span className="mb-3 block text-[10px] font-mono uppercase tracking-[0.2em] text-[#E69A3A]">{project.visualLabel ?? "PROJECT STUDY"}</span>
-      <span className="block font-display text-3xl font-bold uppercase tracking-tight text-[#F3F2EE] sm:text-6xl">{project.title}</span>
-    </div>
+  <div className="absolute inset-0 flex items-center justify-center overflow-hidden bg-[#22252A]">
+    {project.image ? (
+      <img
+        src={project.image}
+        alt={`${project.title} project preview`}
+        className="h-full w-full object-cover"
+      />
+    ) : (
+      <div className="w-full max-w-2xl p-6 text-center sm:p-10">
+        <span className="mb-3 block text-[10px] font-mono uppercase tracking-[0.2em] text-[#E69A3A]">
+          {project.visualLabel ?? "PROJECT STUDY"}
+        </span>
+        <span className="block font-display text-3xl font-bold uppercase tracking-tight text-[#F3F2EE] sm:text-6xl">
+          {project.title}
+        </span>
+      </div>
+    )}
   </div>
 );
 

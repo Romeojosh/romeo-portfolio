@@ -56,16 +56,19 @@ export const Hero: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ ...transitionBase, delay: shouldReduceMotion ? 0 : 0.1 }}
           >
-            <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-[7.25rem] xl:text-[7.75rem] font-extrabold font-display uppercase tracking-tight text-[#F3EEE8] leading-[0.88] m-0">
-              ROMEO JOSH C.<br />
-              <span className="text-gradient-amber-lemon tracking-tight inline-block">
-                REQUIRON
-              </span>
-            </h1>
+            <h1 className="m-0 font-display text-5xl font-extrabold uppercase leading-[0.88] tracking-
+  tight text-[#F3F2EE] sm:text-7xl md:text-8xl lg:text-[7.25rem] xl:text-[7.75rem]">
+    ROMEO JOSH C.
+    <br />
+    <span className="bg-gradient-to-r from-[#E69A3A] via-[#F6B85F] to-[#FFFB3C] bg-clip-text
+    text-transparent drop-shadow-sm drop-shadow-[0_0_28px_rgba(246,184,95,0.4)]">
+      REQUIRON
+    </span>
+  </h1>
 
             {/* Role Label */}
             <p className="text-xs sm:text-sm font-mono tracking-[0.25em] text-[#AFA49A] uppercase mt-4 sm:mt-5">
-              DEVELOPER • ATHLETE • CREATOR
+              IT STUDENT • ATHLETE • ASPIRING DEVELOPER
             </p>
           </motion.div>
 

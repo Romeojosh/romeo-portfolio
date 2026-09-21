@@ -10,7 +10,7 @@ export const Footer: React.FC = () => {
             Romeo Josh C. Requiron
           </p>
           <p className="mt-2 mb-0 text-xs font-mono uppercase tracking-[0.14em] text-[#74787F]">
-            Developer • Student • Athlete
+            IT Student • Athlete • Aspiring Developer
           </p>
         </div>
 

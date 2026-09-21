@@ -60,7 +60,7 @@ export const Hero: React.FC = () => {
   tight text-[#F3F2EE] sm:text-7xl md:text-8xl lg:text-[7.25rem] xl:text-[7.75rem]">
     ROMEO JOSH C.
     <br />
-    <span className="bg-gradient-to-r from-[#E69A3A] via-[#F6B85F] to-[#FFFB3C] bg-clip-text
+    <span className="theme-hero-gradient bg-gradient-to-r from-[#E69A3A] via-[#F6B85F] to-[#FFFB3C] bg-clip-text
     text-transparent drop-shadow-sm drop-shadow-[0_0_28px_rgba(246,184,95,0.4)]">
       REQUIRON
     </span>
@@ -77,7 +77,7 @@ export const Hero: React.FC = () => {
             initial={shouldReduceMotion ? false : { opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ ...transitionBase, delay: shouldReduceMotion ? 0 : 0.2 }}
-            className="text-base sm:text-lg text-[#AFA49A] font-light max-w-xl leading-relaxed"
+            className="theme-hero-secondary text-base sm:text-lg text-[#AFA49A] font-light max-w-xl leading-relaxed"
           >
             I build digital experiences where design, technology, and performance meet. Engineering high-resilience web architectures shaped by endurance athletics and precise design execution.
           </motion.p>
@@ -92,7 +92,7 @@ export const Hero: React.FC = () => {
             <a
               href="#work"
               data-cursor="link"
-            className="px-7 py-3.5 rounded-full bg-[#E69A3A] hover:bg-[#F6B85F] text-[#111214] font-display font-bold text-sm tracking-wide transition-all duration-200 shadow-[0_0_25px_rgba(230,154,58,0.25)] hover:shadow-[0_0_35px_rgba(246,184,95,0.4)] flex items-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E69A3A] focus-visible:ring-offset-2 focus-visible:ring-offset-[#111214]"
+              className="theme-hero-primary-cta px-7 py-3.5 rounded-full bg-[#E69A3A] hover:bg-[#F6B85F] text-[#111214] font-display font-bold text-sm tracking-wide transition-all duration-200 shadow-[0_0_25px_rgba(230,154,58,0.25)] hover:shadow-[0_0_35px_rgba(246,184,95,0.4)] flex items-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E69A3A] focus-visible:ring-offset-2 focus-visible:ring-offset-[#111214]"
             >
               <span>View Projects</span>
               <span aria-hidden="true">↓</span>
@@ -111,12 +111,13 @@ export const Hero: React.FC = () => {
             initial={shouldReduceMotion ? false : { opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ ...transitionBase, delay: shouldReduceMotion ? 0 : 0.35 }}
-            className="flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-[rgba(246,184,95,0.16)] pt-6 text-[10px] font-mono uppercase tracking-[0.16em] text-[#A6A8AD] sm:text-[11px]"
+            className="theme-hero-metadata flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-[rgba(246,184,95,0.16)] pt-6 text-[10px] font-mono uppercase tracking-[0.16em] text-[#A6A8AD] sm:text-[11px]"
           >
             <span className="text-[#F6B85F]">ILOILO, PH</span>
             <span className="text-[#74787F]" aria-hidden="true">|</span>
             <span>WESTERN INSTITUTE OF TECHNOLOGY</span>
-            <span className="text-[#74787F]" aria-hidden="true"></span>
+            <span className="text-[#74787F]" aria-hidden="true">|</span>
+            <span>IT STUDENT • ATHLETE • ASPIRING DEVELOPER</span>
           </motion.div>
         </div>
 
@@ -129,7 +130,7 @@ export const Hero: React.FC = () => {
         >
           <div className="relative w-full max-w-[440px]">
             {/* Technical Caption Above */}
-            <div className="text-[10px] font-mono text-[#AFA49A]/60 tracking-widest uppercase mb-2.5 px-1">
+            <div className="theme-hero-caption text-[10px] font-mono text-[#AFA49A]/60 tracking-widest uppercase mb-2.5 px-1">
               [ FIG. 01 — DUAL IDENTITY ]
             </div>
 
@@ -142,7 +143,7 @@ export const Hero: React.FC = () => {
             />
 
             {/* Bottom Captions */}
-            <div className="flex items-center justify-between text-[11px] font-mono text-[#AFA49A]/70 tracking-widest uppercase mt-3 px-1">
+            <div className="theme-hero-caption flex items-center justify-between text-[11px] font-mono text-[#AFA49A]/70 tracking-widest uppercase mt-3 px-1">
               <span className="text-[#A86F2C]">WIT VARSITY // LENS</span>
             </div>
           </div>

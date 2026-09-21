@@ -271,6 +271,156 @@ body {
 }
 
 /* ============================================================================
+   Light Theme Overrides
+   ========================================================================== */
+.light {
+  --color-background: #F5F4F0;
+  --color-surface: #FFFFFF;
+  --color-elevated: #ECEAE4;
+  --color-amber: #B8741A;
+  --color-gold: #C9942E;
+  --color-bronze: #7A5124;
+  --color-lemon: #D9B83E;
+  --color-text-primary: #17181A;
+  --color-text-secondary: #55585E;
+  --color-text-muted: #7A7D82;
+  --color-hairline: rgba(23, 24, 26, 0.10);
+  --glow-amber: rgba(184, 116, 26, 0.12);
+  --glow-gold: rgba(201, 148, 46, 0.10);
+  --glow-bronze: rgba(122, 81, 36, 0.10);
+}
+
+.light body,
+.light #root {
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+}
+
+.light [class~="bg-[#111214]"] { background-color: var(--color-background) !important; }
+.light [class~="bg-[#181A1D]"] { background-color: var(--color-surface) !important; }
+.light [class~="bg-[#22252A]"] { background-color: var(--color-elevated) !important; }
+.light [class~="bg-[#E69A3A]"] { background-color: var(--color-amber) !important; }
+.light [class~="bg-[#F6B85F]"] { background-color: var(--color-gold) !important; }
+.light [class~="bg-[#A86F2C]"] { background-color: var(--color-bronze) !important; }
+.light [class~="bg-[rgba(24,26,29,0.85)]"] { background-color: rgba(255, 255, 255, 0.78) !important; }
+.light [class~="bg-[rgba(24,26,29,0.95)]"] { background-color: rgba(255, 255, 255, 0.88) !important; }
+.light [class~="bg-[#111214]/85"] { background-color: rgba(245, 244, 240, 0.9) !important; }
+
+.light [class~="text-[#F3F2EE]"],
+.light [class~="text-[#F3EEE8]"] { color: var(--color-text-primary) !important; }
+.light [class~="text-[#A6A8AD]"],
+.light [class~="text-[#AFA49A]"] { color: var(--color-text-secondary) !important; }
+.light [class~="text-[#74787F]"] { color: var(--color-text-muted) !important; }
+.light [class~="text-[#E69A3A]"] { color: var(--color-amber) !important; }
+.light [class~="text-[#F6B85F]"] { color: var(--color-gold) !important; }
+.light [class~="text-[#A86F2C]"] { color: var(--color-bronze) !important; }
+
+.light [class~="border-[rgba(255,255,255,0.08)]"] {
+  border-color: var(--color-hairline) !important;
+}
+.light [class~="border-[rgba(246,184,95,0.14)]"] {
+  border-color: rgba(169, 101, 22, 0.15) !important;
+}
+.light [class~="border-[rgba(246,184,95,0.16)]"] {
+  border-color: rgba(140, 92, 36, 0.18) !important;
+}
+.light [class~="border-[rgba(168,111,44,0.42)]"] {
+  border-color: rgba(140, 92, 36, 0.36) !important;
+}
+.light [class~="border-[#A86F2C]/50"] {
+  border-color: rgba(140, 92, 36, 0.42) !important;
+}
+
+.light .text-gradient-amber-lemon,
+.light [class~="from-[#E69A3A]"][class~="via-[#F6B85F]"][class~="to-[#FFFB3C]"] {
+  background-image: linear-gradient(90deg, #A96516 0%, #C58D28 50%, #D7B537 100%) !important;
+}
+
+.light .grain-overlay { opacity: 0.02 !important; }
+.light .theme-animated-background { opacity: 0.24; filter: saturate(0.7); }
+.light .theme-particle-field { opacity: 0.26; }
+.light .theme-global-ambient { opacity: 0.15; }
+
+.light .theme-hero-secondary,
+.light .theme-hero-metadata {
+  color: #55585E !important;
+}
+
+.light .theme-hero-caption {
+  color: #7A7D82 !important;
+  opacity: 1 !important;
+}
+
+.light .theme-hero-gradient {
+  background-image: linear-gradient(90deg, #A96516 0%, #C58D28 50%, #D7B537 100%) !important;
+  filter: none !important;
+}
+
+.light .theme-hero-primary-cta {
+  box-shadow: 0 0 18px rgba(184, 116, 26, 0.12) !important;
+}
+
+.light .theme-hero-primary-cta:hover {
+  box-shadow: 0 0 24px rgba(201, 148, 46, 0.16) !important;
+}
+
+.light [aria-current="location"] {
+  background-color: #ECEAE4 !important;
+  border-color: rgba(169, 101, 22, 0.15) !important;
+  color: #A96516 !important;
+}
+
+.light .theme-toggle-button {
+  background-color: #FFFFFF !important;
+  border-color: rgba(23, 24, 26, 0.10) !important;
+  color: #7A5124 !important;
+}
+
+.light .theme-portrait-frame,
+.light .theme-project-visual-frame {
+  background-color: #181A1D !important;
+  border-color: rgba(122, 81, 36, 0.34) !important;
+}
+
+.light .theme-portrait-frame {
+  box-shadow: 0 12px 30px rgba(23, 24, 26, 0.10) !important;
+}
+
+.light .theme-reveal-hint {
+  background-color: rgba(24, 26, 29, 0.90) !important;
+  border-color: rgba(184, 116, 26, 0.28) !important;
+  color: #F3F2EE !important;
+}
+
+.light .theme-reveal-hint span {
+  color: inherit !important;
+}
+
+.light .theme-reveal-lens {
+  border-color: rgba(122, 81, 36, 0.72) !important;
+  box-shadow: 0 0 35px rgba(184, 116, 26, 0.14), inset 0 0 24px rgba(122, 81, 36, 0.06) !important;
+}
+
+.light .project-carousel-card {
+  box-shadow: 0 12px 30px rgba(23, 24, 26, 0.04) !important;
+}
+
+.light .custom-cursor {
+  border-color: var(--color-bronze);
+  background: rgba(255, 253, 248, 0.35);
+  box-shadow: 0 0 12px rgba(140, 92, 36, 0.22);
+}
+.light .custom-cursor[data-state="link"],
+.light .custom-cursor[data-state="view"] {
+  border-color: var(--color-bronze);
+}
+.light .custom-cursor-label { color: var(--color-text-primary); }
+
+.light .tech-logo-loop [class~="bg-[#181A1D]"] {
+  background-color: var(--color-surface) !important;
+}
+
+/* ============================================================================
    Desktop Custom Cursor
    ========================================================================== */
 .custom-cursor {

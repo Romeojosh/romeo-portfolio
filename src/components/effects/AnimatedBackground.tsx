@@ -62,7 +62,7 @@ export const AnimatedBackground: React.FC = () => {
     <div
       ref={backgroundRef}
       aria-hidden="true"
-      className="pointer-events-none absolute inset-0 z-[1] overflow-clip"
+      className="theme-animated-background pointer-events-none absolute inset-0 z-[1] overflow-clip"
       style={{ contain: "paint" }}
     >
       <motion.div

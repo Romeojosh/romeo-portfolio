@@ -184,7 +184,7 @@ export const ParticleField: React.FC = () => {
     <canvas
       ref={canvasRef}
       aria-hidden="true"
-      className="pointer-events-none absolute inset-0 z-[3] h-full w-full"
+      className="theme-particle-field pointer-events-none absolute inset-0 z-[3] h-full w-full"
     />
   );
 };

@@ -3,22 +3,10 @@ import { motion, useReducedMotion } from "motion/react";
 import athletePortrait from "../assets/romeo-athlete.png";
 import { TextScramble } from "../components/effects/TextScramble";
 
-const telemetryCards = [
-  {
-    label: "IDENTITY",
-    value: "WIT Varsity Athlete",
-    subtext: "IT Student • Runner",
-  },
-  {
-    label: "WHAT SPORT TAUGHT ME",
-    value: "Consistency",
-    subtext: "Patience • Discipline • Resilience",
-  },
-  {
-    label: "WHAT IT SUPPORTS",
-    value: "Education",
-    subtext: "Using talent as an opportunity to finish my studies",
-  },
+const supportingFacts = [
+  "WIT VARSITY ATHLETE",
+  "MIDDLE / LONG DISTANCE RUNNER",
+  "IT STUDENT • ATHLETE • ASPIRING DEVELOPER",
 ];
 
 export const Discipline: React.FC = () => {
@@ -64,75 +52,46 @@ export const Discipline: React.FC = () => {
               <span className="block text-[#F3F2EE]">REPEAT.</span>
             </motion.h2>
 
-            <div className="mt-10 max-w-2xl space-y-6 sm:mt-12">
-              <motion.p
-                initial={shouldReduceMotion ? false : { opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ ...transitionBase, delay: shouldReduceMotion ? 0 : 0.15 }}
-                className="m-0 text-base leading-[1.75] text-[#F3EEE8] sm:text-lg"
-              >
-                Running is more than a sport to me. It has shaped how I think, how I work, and how I handle difficult situations. Training has taught me patience, consistency, discipline, and the importance of showing up even when progress feels slow.
-              </motion.p>
-
-              <motion.p
-                initial={shouldReduceMotion ? false : { opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ ...transitionBase, delay: shouldReduceMotion ? 0 : 0.22 }}
-                className="m-0 text-sm leading-[1.8] text-[#AFA49A] sm:text-base"
-              >
-                Those same lessons carry into programming. Whether I’m working through a difficult bug, learning a new technology, or building a project over several weeks, I approach it the same way I approach training: stay consistent, adjust when needed, and keep moving forward.
-              </motion.p>
-            </div>
+            <motion.p
+              initial={shouldReduceMotion ? false : { opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ ...transitionBase, delay: shouldReduceMotion ? 0 : 0.15 }}
+              className="mt-10 max-w-2xl text-base leading-[1.8] text-[#AFA49A] sm:mt-12 sm:text-lg"
+            >
+              Running has shaped how I think, work, and handle difficult situations. Training taught me patience, consistency, and discipline — lessons I carry into debugging, learning new technology, and building long-term projects. When something is not working, I adjust, stay patient, and keep improving.
+            </motion.p>
 
             <motion.div
               initial={shouldReduceMotion ? false : { opacity: 0, y: 18 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ ...transitionBase, delay: shouldReduceMotion ? 0 : 0.3 }}
-              className="mt-10 border-l-2 border-[#A86F2C] bg-[#181A1D]/75 px-5 py-5 sm:mt-12 sm:px-6"
+              transition={{ ...transitionBase, delay: shouldReduceMotion ? 0 : 0.24 }}
+              className="mt-8 border-l-2 border-[#A86F2C] bg-[#181A1D]/75 px-5 py-5 sm:mt-10 sm:px-6"
             >
               <span className="mb-3 block text-[10px] font-mono uppercase tracking-[0.16em] text-[#A86F2C]">
-                Mindset // In Practice
+                WIT VARSITY ATHLETE
               </span>
-              <p className="m-0 font-display text-base leading-relaxed text-[#F3EEE8] sm:text-lg">
-                Discipline connects the athlete I am with the developer I’m becoming.
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ ...transitionBase, delay: shouldReduceMotion ? 0 : 0.36 }}
-              className="mt-10 border-t border-[rgba(246,184,95,0.16)] pt-6 sm:mt-12 sm:pt-8"
-            >
-              <span className="mb-4 block text-xs font-mono uppercase tracking-[0.15em] text-[#E69A3A]">
-                Why the WIT Jersey Matters
-              </span>
-              <div className="space-y-5 text-sm leading-[1.8] text-[#AFA49A] sm:text-base">
+              <div className="space-y-3 text-sm leading-[1.75] text-[#AFA49A] sm:text-base">
                 <p className="m-0">
-                  The WIT jersey represents an important part of who I am. I’m proud to be a student-athlete of Western Institute of Technology and to represent the school as a varsity athlete. Being part of the WIT varsity program has given me opportunities to develop my talent while continuing my education.
+                  I’m proud to represent Western Institute of Technology as a varsity athlete. WIT has given me the opportunity to use my talent in athletics as a pathway to a free college education, allowing me to continue pursuing my studies while representing the school through sports.
                 </p>
-                <p className="m-0">
-                  I’m also deeply grateful to the Salas family for their generosity, kindness, and support for WIT varsity athletes. Their care gives student-athletes like me the opportunity to use our talents not only in competition, but also as a pathway toward a quality education and finishing our studies.
+                <p className="m-0 text-[#74787F]">
+                  I’m deeply grateful to the Salas family for their generosity and support for WIT varsity athletes.
                 </p>
               </div>
             </motion.div>
 
             <motion.div
-              initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
+              initial={shouldReduceMotion ? false : { opacity: 0, y: 18 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ ...transitionBase, delay: shouldReduceMotion ? 0 : 0.44 }}
-              className="mt-10 grid grid-cols-1 border-y border-[rgba(246,184,95,0.16)] sm:grid-cols-3 sm:divide-x sm:divide-[rgba(246,184,95,0.16)]"
+              transition={{ ...transitionBase, delay: shouldReduceMotion ? 0 : 0.32 }}
+              className="mt-8 grid grid-cols-1 border-y border-[rgba(246,184,95,0.16)] sm:grid-cols-3 sm:divide-x sm:divide-[rgba(246,184,95,0.16)]"
             >
-              {telemetryCards.map((card) => (
-                <div key={card.label} className="border-b border-[rgba(246,184,95,0.16)] py-5 last:border-b-0 sm:border-b-0 sm:px-5 sm:first:pl-0 sm:last:pr-0">
-                  <span className="block text-[10px] font-mono uppercase tracking-[0.14em] text-[#AFA49A]">{card.label}</span>
-                  <p className="mt-2 mb-1 font-display text-base font-semibold text-[#F3EEE8]">{card.value}</p>
-                  <span className="block text-[11px] leading-relaxed text-[#E69A3A]/80">{card.subtext}</span>
+              {supportingFacts.map((fact) => (
+                <div key={fact} className="border-b border-[rgba(246,184,95,0.16)] py-4 text-[10px] font-mono uppercase tracking-[0.14em] text-[#A6A8AD] last:border-b-0 sm:border-b-0 sm:px-5 sm:first:pl-0 sm:last:pr-0">
+                  {fact}
                 </div>
               ))}
             </motion.div>

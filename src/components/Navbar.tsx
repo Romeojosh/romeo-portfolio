@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { ArrowRight, Menu, X } from "lucide-react";
+import { ArrowRight, Menu, Moon, Sun, X } from "lucide-react";
 import { MagneticLink } from "./effects/MagneticLink";
 
 interface NavLink {
@@ -18,6 +18,15 @@ export const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState<string | null>(null);
+  const [theme, setTheme] = useState<"dark" | "light">(() =>
+    document.documentElement.classList.contains("light") ? "light" : "dark",
+  );
+
+  useEffect(() => {
+    document.documentElement.classList.toggle("light", theme === "light");
+    document.documentElement.classList.toggle("dark", theme === "dark");
+    localStorage.setItem("portfolio-theme", theme);
+  }, [theme]);
 
   // Monitor scroll position for subtle opacity/border change
   useEffect(() => {
@@ -136,6 +145,16 @@ export const Navbar: React.FC = () => {
 
         {/* Right: CTA Button (Desktop) & Mobile Hamburger Toggle */}
         <div className="flex items-center gap-2">
+          <button
+            type="button"
+            data-cursor="link"
+            onClick={() => setTheme((currentTheme) => currentTheme === "dark" ? "light" : "dark")}
+            aria-label={theme === "dark" ? "Switch to light theme" : "Switch to dark theme"}
+            title={theme === "dark" ? "Switch to light theme" : "Switch to dark theme"}
+            className="theme-toggle-button flex h-8 w-8 items-center justify-center rounded-full border border-[rgba(255,255,255,0.08)] bg-[#22252A] text-[#F6B85F] transition-colors hover:border-[#E69A3A] hover:text-[#FFFB3C] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#E69A3A]"
+          >
+            {theme === "dark" ? <Sun className="h-3.5 w-3.5" aria-hidden="true" /> : <Moon className="h-3.5 w-3.5" aria-hidden="true" />}
+          </button>
           <MagneticLink className="hidden sm:block">
             <a
               href="#contact"

@@ -166,7 +166,7 @@ export const Contact: React.FC = () => {
                 Romeo Josh C. Requiron
               </span>
               <span className="mt-2 block text-xs font-mono uppercase tracking-[0.14em] text-[#74787F]">
-                Developer • Student • Athlete
+                IT Student • Athlete • Aspiring Developer
               </span>
             </motion.div>
 

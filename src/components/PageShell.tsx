@@ -9,7 +9,7 @@ export const PageShell: React.FC<PageShellProps> = ({ children }) => {
   return (
     <div className="min-h-screen bg-[#111214] text-[#F3F2EE] relative overflow-visible selection:bg-[#E69A3A] selection:text-[#111214]">
       {/* Ambient background lighting */}
-      <div aria-hidden="true" className="fixed inset-0 pointer-events-none overflow-hidden z-0">
+      <div aria-hidden="true" className="theme-global-ambient fixed inset-0 pointer-events-none overflow-hidden z-0">
         <div className="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] bg-[#E69A3A]/5 rounded-full blur-[140px]" />
         <div className="absolute bottom-10 right-10 w-[600px] h-[600px] bg-[#A86F2C]/15 rounded-full blur-[160px]" />
       </div>

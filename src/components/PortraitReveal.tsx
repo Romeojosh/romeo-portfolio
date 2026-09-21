@@ -190,7 +190,7 @@ export const PortraitReveal: React.FC<PortraitRevealProps> = ({
       onPointerDown={handlePointerDown}
       onPointerUp={handlePointerUp}
       onPointerCancel={handlePointerCancel}
-      className={`relative aspect-[4/5] w-full rounded-2xl overflow-hidden border border-[rgba(255,255,255,0.08)] bg-[#181A1D] shadow-lg shadow-black/50 cursor-crosshair select-none touch-pan-y ${className}`}
+      className={`theme-portrait-frame relative aspect-[4/5] w-full rounded-2xl overflow-hidden border border-[rgba(255,255,255,0.08)] bg-[#181A1D] shadow-lg shadow-black/50 cursor-crosshair select-none touch-pan-y ${className}`}
     >
       {/* Base Layer: Developer Portrait (Default visible state) */}
       <img
@@ -224,7 +224,7 @@ export const PortraitReveal: React.FC<PortraitRevealProps> = ({
       <div
         ref={lensRingRef}
         aria-hidden="true"
-        className="absolute top-0 left-0 rounded-full pointer-events-none transition-opacity duration-300 ease-out"
+        className="theme-reveal-lens absolute top-0 left-0 rounded-full pointer-events-none transition-opacity duration-300 ease-out"
         style={{
           width: `${lensRingDiameter}px`,
           height: `${lensRingDiameter}px`,
@@ -240,7 +240,7 @@ export const PortraitReveal: React.FC<PortraitRevealProps> = ({
       <div
         ref={hintPillRef}
         aria-hidden="true"
-        className="absolute bottom-4 left-1/2 -translate-x-1/2 px-4 py-1.5 rounded-full bg-[#111214]/85 backdrop-blur-md border border-[rgba(255,255,255,0.08)] flex items-center gap-2 pointer-events-none z-30 transition-opacity duration-300 ease-out"
+        className="theme-reveal-hint absolute bottom-4 left-1/2 -translate-x-1/2 px-4 py-1.5 rounded-full bg-[#111214]/85 backdrop-blur-md border border-[rgba(255,255,255,0.08)] flex items-center gap-2 pointer-events-none z-30 transition-opacity duration-300 ease-out"
       >
         <span className="w-1.5 h-1.5 rounded-full bg-[#E69A3A] animate-ping" />
         <span className="text-[10px] font-mono uppercase tracking-widest text-[#F3EEE8]">

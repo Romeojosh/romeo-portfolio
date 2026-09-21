@@ -17,6 +17,7 @@ const NAV_LINKS: NavLink[] = [
 export const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState<string | null>(null);
 
   // Monitor scroll position for subtle opacity/border change
   useEffect(() => {
@@ -40,6 +41,43 @@ export const Navbar: React.FC = () => {
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [isMobileMenuOpen]);
+
+  useEffect(() => {
+    const sections = NAV_LINKS
+      .map((link) => document.querySelector<HTMLElement>(link.href))
+      .filter((section): section is HTMLElement => section !== null);
+
+    if (sections.length === 0) return;
+
+    const visibleSections = new Map<string, number>();
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const sectionId = (entry.target as HTMLElement).id;
+
+          if (entry.isIntersecting) {
+            visibleSections.set(sectionId, entry.intersectionRatio);
+          } else {
+            visibleSections.delete(sectionId);
+          }
+        });
+
+        const mostVisibleSection = [...visibleSections.entries()].sort(
+          (first, second) => second[1] - first[1],
+        )[0]?.[0] ?? null;
+
+        setActiveSection(mostVisibleSection);
+      },
+      {
+        rootMargin: "-20% 0px -60% 0px",
+        threshold: [0, 0.25, 0.5, 0.75, 1],
+      },
+    );
+
+    sections.forEach((section) => observer.observe(section));
+
+    return () => observer.disconnect();
+  }, []);
 
   const closeMobileMenu = () => {
     setIsMobileMenuOpen(false);
@@ -82,7 +120,12 @@ export const Navbar: React.FC = () => {
                 <a
                   href={link.href}
                   data-cursor="link"
-                  className="block hover:text-[#F6B85F] transition-colors py-1 focus-visible:outline-none focus-visible:text-[#F6B85F] focus-visible:ring-1 focus-visible:ring-[#E69A3A] rounded"
+                  aria-current={activeSection === link.href.slice(1) ? "location" : undefined}
+                  className={`relative block rounded-full border px-4 py-2 transition-all duration-300 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#E69A3A] ${
+                    activeSection === link.href.slice(1)
+                      ? "border-[rgba(246,184,95,0.14)] bg-[#22252A] text-[#F6B85F] shadow-[0_0_18px_rgba(230,154,58,0.08)]"
+                      : "border-transparent text-[#A6A8AD] hover:bg-white/[0.03] hover:text-[#F3F2EE]"
+                  }`}
                 >
                   {link.label}
                 </a>
@@ -136,8 +179,13 @@ export const Navbar: React.FC = () => {
                   <a
                     href={link.href}
                     data-cursor="link"
+                    aria-current={activeSection === link.href.slice(1) ? "location" : undefined}
                     onClick={closeMobileMenu}
-                    className="block py-2 px-3 rounded-lg text-[#F3EEE8] hover:text-[#E69A3A] hover:bg-[#22252A] transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#E69A3A]"
+                    className={`relative block rounded-full border px-4 py-2 transition-all duration-300 hover:text-[#F3F2EE] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#E69A3A] ${
+                      activeSection === link.href.slice(1)
+                        ? "border-[rgba(246,184,95,0.14)] bg-[#22252A] text-[#F6B85F] shadow-[0_0_18px_rgba(230,154,58,0.08)]"
+                        : "border-transparent text-[#A6A8AD] hover:bg-white/[0.03]"
+                    }`}
                   >
                     {link.label}
                   </a>

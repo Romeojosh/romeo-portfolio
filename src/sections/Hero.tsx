@@ -116,8 +116,8 @@ export const Hero: React.FC = () => {
             <span className="text-[#F6B85F]">ILOILO, PH</span>
             <span className="text-[#74787F]" aria-hidden="true">|</span>
             <span>WESTERN INSTITUTE OF TECHNOLOGY</span>
-            <span className="text-[#74787F]" aria-hidden="true">|</span>
-            <span>IT STUDENT • ATHLETE • ASPIRING DEVELOPER</span>
+            <span className="text-[#74787F]" aria-hidden="true"></span>
+
           </motion.div>
         </div>
 

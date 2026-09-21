@@ -106,21 +106,17 @@ export const Hero: React.FC = () => {
             </a>
           </motion.div>
 
-          {/* Technical Metadata Row */}
+          {/* Factual Identity Metadata */}
           <motion.div
             initial={shouldReduceMotion ? false : { opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ ...transitionBase, delay: shouldReduceMotion ? 0 : 0.35 }}
-            className="pt-6 border-t border-[rgba(246,184,95,0.16)] flex flex-wrap items-center gap-6 text-[11px] font-mono text-[#AFA49A]/90 tracking-widest uppercase"
+            className="flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-[rgba(246,184,95,0.16)] pt-6 text-[10px] font-mono uppercase tracking-[0.16em] text-[#A6A8AD] sm:text-[11px]"
           >
-            <div className="flex items-center gap-2">
-              <span className="text-[#E69A3A]">GEO</span>
-              <span className="text-[#F3EEE8]/90">ILOILO, PH</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="text-[#A86F2C]">PULSE</span>
-              <span className="text-[#F3EEE8]/90">RECORD // 00:00:26</span>
-            </div>
+            <span className="text-[#F6B85F]">ILOILO, PH</span>
+            <span className="text-[#74787F]" aria-hidden="true">|</span>
+            <span>WESTERN INSTITUTE OF TECHNOLOGY</span>
+            <span className="text-[#74787F]" aria-hidden="true"></span>
           </motion.div>
         </div>
 
@@ -147,7 +143,6 @@ export const Hero: React.FC = () => {
 
             {/* Bottom Captions */}
             <div className="flex items-center justify-between text-[11px] font-mono text-[#AFA49A]/70 tracking-widest uppercase mt-3 px-1">
-              <span>TECH LAYER // DEFAULT</span>
               <span className="text-[#A86F2C]">WIT VARSITY // LENS</span>
             </div>
           </div>

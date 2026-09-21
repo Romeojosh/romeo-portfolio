@@ -488,6 +488,35 @@ body {
   }
 }
 
+/* Light-theme cursor states intentionally follow the base cursor rules above. */
+.light .custom-cursor {
+  border-color: #7A5124;
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 0 10px rgba(122, 81, 36, 0.10);
+}
+
+.light .custom-cursor[data-state="link"] {
+  border-color: #B8741A;
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 0 12px rgba(184, 116, 26, 0.12);
+}
+
+.light .custom-cursor[data-state="view"] {
+  border-color: rgba(184, 116, 26, 0.70);
+  background: rgba(24, 26, 29, 0.94);
+  box-shadow: 0 0 16px rgba(122, 81, 36, 0.12);
+}
+
+.light .custom-cursor[data-state="reveal"] {
+  border-color: rgba(201, 148, 46, 0.72);
+  background: rgba(24, 26, 29, 0.90);
+  box-shadow: 0 0 16px rgba(184, 116, 26, 0.14);
+}
+
+.light .custom-cursor-label {
+  color: #F3F2EE !important;
+}
+
 /* ==========================================================================
    Layout Utilities
    ========================================================================== */

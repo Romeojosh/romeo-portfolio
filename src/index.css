@@ -346,6 +346,18 @@ body {
   color: #55585E !important;
 }
 
+.light .theme-hero-eyebrow {
+  background-color: #ECEAE4 !important;
+  border-color: rgba(23, 24, 26, 0.10) !important;
+  color: #55585E !important;
+  box-shadow: 0 4px 14px rgba(23, 24, 26, 0.04) !important;
+}
+
+.light .theme-hero-eyebrow-dot {
+  background-color: #7A5124 !important;
+  box-shadow: none !important;
+}
+
 .light .theme-hero-caption {
   color: #7A7D82 !important;
   opacity: 1 !important;
@@ -357,11 +369,32 @@ body {
 }
 
 .light .theme-hero-primary-cta {
-  box-shadow: 0 0 18px rgba(184, 116, 26, 0.12) !important;
+  background-color: #B8741A !important;
+  color: #17181A !important;
+  box-shadow: 0 0 0 1px #A96516 inset, 0 0 18px rgba(184, 116, 26, 0.12) !important;
 }
 
 .light .theme-hero-primary-cta:hover {
-  box-shadow: 0 0 24px rgba(201, 148, 46, 0.16) !important;
+  background-color: #A96516 !important;
+  box-shadow: 0 0 0 1px #8F5711 inset, 0 0 24px rgba(201, 148, 46, 0.16) !important;
+}
+
+.light .theme-hero-secondary-cta {
+  background-color: transparent !important;
+  border-color: rgba(23, 24, 26, 0.12) !important;
+  color: #55585E !important;
+}
+
+.light .theme-hero-secondary-cta:hover {
+  background-color: #ECEAE4 !important;
+  border-color: rgba(169, 101, 22, 0.42) !important;
+  color: #17181A !important;
+}
+
+.light .theme-hero-focus:focus-visible {
+  outline: 2px solid #B8741A !important;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 2px #F5F4F0 !important;
 }
 
 .light [aria-current="location"] {

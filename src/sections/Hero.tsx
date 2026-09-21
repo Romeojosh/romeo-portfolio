@@ -37,10 +37,10 @@ export const Hero: React.FC = () => {
             initial={shouldReduceMotion ? false : { opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={transitionBase}
-            className="inline-flex items-center gap-3 self-start px-3.5 py-1.5 rounded-full bg-[#181A1D] border border-[rgba(255,255,255,0.08)] text-[#A6A8AD] text-[11px] font-mono tracking-widest uppercase shadow-sm"
+            className="theme-hero-eyebrow inline-flex items-center gap-3 self-start px-3.5 py-1.5 rounded-full bg-[#181A1D] border border-[rgba(255,255,255,0.08)] text-[#A6A8AD] text-[11px] font-mono tracking-widest uppercase shadow-sm"
           >
             <span
-              className="w-2 h-2 rounded-full bg-[#E69A3A] shadow-[0_0_8px_#E69A3A] shrink-0"
+              className="theme-hero-eyebrow-dot w-2 h-2 rounded-full bg-[#E69A3A] shadow-[0_0_8px_#E69A3A] shrink-0"
               aria-hidden="true"
             />
             <TextScramble
@@ -92,7 +92,7 @@ export const Hero: React.FC = () => {
             <a
               href="#work"
               data-cursor="link"
-              className="theme-hero-primary-cta px-7 py-3.5 rounded-full bg-[#E69A3A] hover:bg-[#F6B85F] text-[#111214] font-display font-bold text-sm tracking-wide transition-all duration-200 shadow-[0_0_25px_rgba(230,154,58,0.25)] hover:shadow-[0_0_35px_rgba(246,184,95,0.4)] flex items-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E69A3A] focus-visible:ring-offset-2 focus-visible:ring-offset-[#111214]"
+              className="theme-hero-focus theme-hero-primary-cta px-7 py-3.5 rounded-full bg-[#E69A3A] hover:bg-[#F6B85F] text-[#111214] font-display font-bold text-sm tracking-wide transition-all duration-200 shadow-[0_0_25px_rgba(230,154,58,0.25)] hover:shadow-[0_0_35px_rgba(246,184,95,0.4)] flex items-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E69A3A] focus-visible:ring-offset-2 focus-visible:ring-offset-[#111214]"
             >
               <span>View Projects</span>
               <span aria-hidden="true">↓</span>
@@ -100,7 +100,7 @@ export const Hero: React.FC = () => {
             <a
               href="#about"
               data-cursor="link"
-              className="px-7 py-3.5 rounded-full border border-[rgba(255,255,255,0.08)] hover:border-[#E69A3A]/60 hover:bg-[#E69A3A]/5 text-[#F3F2EE] font-display text-sm tracking-wide transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E69A3A] focus-visible:ring-offset-2 focus-visible:ring-offset-[#111214]"
+              className="theme-hero-focus theme-hero-secondary-cta px-7 py-3.5 rounded-full border border-[rgba(255,255,255,0.08)] hover:border-[#E69A3A]/60 hover:bg-[#E69A3A]/5 text-[#F3F2EE] font-display text-sm tracking-wide transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E69A3A] focus-visible:ring-offset-2 focus-visible:ring-offset-[#111214]"
             >
               About Me
             </a>
